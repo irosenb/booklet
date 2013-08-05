@@ -1,0 +1,18 @@
+
+.site {
+  font-size: 115%;
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em;
+  line-height: 1.5em;
+}
+
+.header {
+	text-align: center;
+}
+
+img {
+	width: 50%;
+	/*float: left;*/
+	display: inline-block;	
+}
