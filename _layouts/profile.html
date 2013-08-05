@@ -14,18 +14,40 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <a class="" href="/">
-    	<img class="logo" src="/img/flatiron-school.png">
-    </a>
 	<div class="container">
-          <div class="site">
-            <div class="header">
-              <!-- <h1 class="title"><a href="/">{{ site.name }}</a></h1> -->
-              <!-- <a class="extra" href="/">home</a> -->
-            </div>
-
-                {{ content }}
-
+      	<div class="site">
+	        <div class="header">
+	        	<a class="smaller" href="/">
+	        		<img class="logo" src="/img/flatiron-school.png">
+	        	</a>
+	        </div>
+			<table class="info">
+				<tr>
+					<td class="field">Email</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, magnam dolores unde perspiciatis incidunt ea veniam aliquam saepe possimus quas recusandae nobis repellendus eligendi nulla debitis deleniti ullam est vitae. {{ page.email }} </td>
+				</tr>
+				<tr>
+					<td class="field">Phone</td>
+					<td>{{ page.phone }} </td>
+				</tr>
+				<tr>
+					<td class="field">Github</td>
+					<td>{{ page.github }} </td>
+				</tr>
+				<tr>
+					<td class="field">Twitter</td>
+					<td>{{ page.twitter}} </td>
+				</tr>
+				<tr>
+					<td class="field">Meetup Presentation</td>
+					<td>{{ page.presentation }} </td>
+				</tr>
+				<tr>
+					<td class="field">Blog</td>
+					<td>{{ page.blog }} </td>
+				</tr>
+			</table>
+             
           </div>
         </div> <!-- /container -->
 </body>

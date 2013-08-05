@@ -2,7 +2,7 @@
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 42em;
+  width: inherit;
   margin: 3em auto 2em;
   line-height: 1.5em;
 }
@@ -11,8 +11,26 @@
 	text-align: center;
 }
 
-img {
-	width: 50%;
-	/*float: left;*/
-	display: inline-block;	
+.smaller {
+	width: inherit;
+	display: block;	
+}
+
+.smaller, img {
+	width: 30%;
+	float: left;
+}
+
+td.field {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+table.info {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+td.field:after {
+	content: ":";
 }
