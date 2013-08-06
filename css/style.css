@@ -21,20 +21,21 @@
 	float: left;
 }
 
-td.field {
+.field {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: right;
+	padding-right: 0.5em;
 }
 
-td.field:after {
+.field:after {
 	content: ":";
 }
 
 .visible-print  { display: inherit !important; }
 
 div.left {
-    float: left;
+    float: right;
     clear: both;
 }
 
