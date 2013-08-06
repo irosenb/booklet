@@ -21,13 +21,14 @@
 	float: left;
 }
 
-td.field {
+.field {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: right;
+	padding-right: 0.5em;
 }
 
-td.field:after {
+.field:after {
 	content: ":";
 }
 
@@ -35,10 +36,14 @@ td.field:after {
 
 div.left {
     float: left;
-    clear: both;
+    clear: left;
 }
 
 
-
+@media print {
+	.thumbnail {
+		float: right;	
+	}
+}
 
 
