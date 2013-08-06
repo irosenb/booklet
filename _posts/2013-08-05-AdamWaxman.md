@@ -1,4 +1,5 @@
 ---
+layout: post
 id: 44
 first_name: Adam
 last_name: Waxman
