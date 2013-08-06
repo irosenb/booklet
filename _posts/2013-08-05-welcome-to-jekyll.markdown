@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2013-08-05 11:53:32
 categories: jekyll update
-phone: "212-865-3777"
+phone: "212-865-3777:"
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
