@@ -1,6 +1,4 @@
 ---
-layout: post
-title:  "Jack Altman"
 id: 13
 first_name: Jack
 last_name: Altman
@@ -23,6 +21,3 @@ looking:
 live: 
 other: 
 ---
-
-
-hello world

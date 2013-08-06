@@ -32,3 +32,13 @@ td.field:after {
 }
 
 .visible-print  { display: inherit !important; }
+
+div.left {
+    float: left;
+    clear: both;
+}
+
+
+
+
+
