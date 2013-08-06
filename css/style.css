@@ -35,11 +35,15 @@
 .visible-print  { display: inherit !important; }
 
 div.left {
-    float: right;
-    clear: both;
+    float: left;
+    clear: left;
 }
 
 
-
+@media print {
+	.thumbnail {
+		float: right;	
+	}
+}
 
 
