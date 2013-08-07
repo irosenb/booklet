@@ -1,3 +1,7 @@
+body {
+	width: 2250px;
+	height: 4200px;
+}
 
 .site {
   font-size: 115%;
@@ -33,11 +37,6 @@
 }
 
 .visible-print  { display: inherit !important; }
-
-div.left {
-    float: left;
-    clear: left;
-}
 
 
 @media print {
