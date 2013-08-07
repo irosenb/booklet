@@ -16,37 +16,41 @@
 	<script src="/js/bootstrap.js"></script>
 </head>
 <body>
-	<div class="header">
-		<a class="smaller" href="/">
-			<img class="logo smaller" src="/img/flatiron-school.png">
-		</a>
+	<div class="contain">
+		<div class="header">
+			<a class="smaller" href="/">
+				<img class="logo smaller" src="/img/flatiron-school.png">
+			</a>
+		</div>
+		<br>
+		<br>
+		<br>
+		<table class="info" cellspacing="0">
+			<tr>
+				<td class="field">Email</td>
+				<td>{{ page.email }} </td>
+			</tr>
+			<tr>
+				<td class="field">Phone</td>
+				<td>{{ page.phone }} </td>
+			</tr>
+			<tr>
+				<td class="field">Github</td>
+				<td>{{ page.github }} </td>
+			</tr>
+			<tr>
+				<td class="field">Twitter</td>
+				<td>{{ page.twitter }} </td>
+			</tr>
+			<tr>
+				<td class="field">Meetup Presentation</td>
+				<td class="presentation">{{ page.presentation }} lorem is</td>
+			</tr>
+			<tr>
+				<td class="field">Blog</td>
+				<td>{{ page.blog }} </td>
+			</tr>
+		</table>
 	</div>
-	<table class="info">
-		<tr>
-			<td class="field">Email</td>
-			<td> {{ page.email }} </td>
-		</tr>
-		<tr>
-			<td class="field">Phone</td>
-			<td>{{ page.phone }} </td>
-		</tr>
-		<tr>
-			<td class="field">Github</td>
-			<td>{{ page.github }} </td>
-		</tr>
-		<tr>
-			<td class="field">Twitter</td>
-			<td>{{ page.twitter }} </td>
-		</tr>
-		<tr>
-			<td class="field">Meetup Presentation</td>
-			<td>{{ page.presentation }} </td>
-		</tr>
-		<tr>
-			<td class="field">Blog</td>
-			<td>{{ page.blog }} </td>
-		</tr>
-	</table>
-	<!-- </div> -->
 </body>
 </html>

@@ -3,9 +3,22 @@ body {
 	height: 4200px;
 }
 
+table { 
+	display:block; 
+	position:relative; 
+}
+
+.contain {
+	margin-left: 50px;
+}
+
+.home {
+	text-align: center !important;
+}
+
 .site {
   font-size: 115%;
-  text-align: justify;
+  /*text-align: justify;*/
   width: inherit;
   margin: 3em auto 2em;
   line-height: 1.5em;
@@ -22,14 +35,27 @@ body {
 
 .smaller {
 	width: 30%;
-	float: left;
+	/*float: left;*/
+	margin-top: 40px 
 }
 
 .field {
 	font-weight: bold;
 	text-transform: uppercase;
-	text-align: right;
+	/*text-align: right;*/
 	padding-right: 0.5em;
+	float: left;
+}
+
+tr {
+	display: inline;
+}
+
+.presentation {
+	/*float: right; */
+	position: absolute;
+	padding-bottom: 10px;
+	display: block;
 }
 
 .field:after {
