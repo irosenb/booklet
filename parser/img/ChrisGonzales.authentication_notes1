@@ -1,0 +1,27 @@
+authentication: are they who they claim to be?
+
+routes: 
+	get /login #=> 'sessions#new'
+
+	post '/login' => 'sessions#create'
+
+	get '/logout' #=> 'sessions#destroy'
+
+	/register #=> users#new
+	POST /users => users#create
+
+	rails g sessions new create destroy
+
+form_for is specifically for wrapping a form around an active record object
+<%= form_tag login_path do %>
+	<p>
+		<%= label_tag "Email" %>
+		<%= test_field_tag "Email" %>
+		<%= submit_tag "Log in" %>
+	</p>
+<% end %>
+
+cookies submit a chunk of data with every request
+
+put current_user method in ApplicationController so that everything has access to it
+
