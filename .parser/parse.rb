@@ -36,10 +36,13 @@ end
 def parser
   print "Creating markdown files... "
   parse_all("markdown")
+
   print "Done.\nCreating text files... "
   parse_all("txt")
+
   print "Done.\nDownloading image files... "
   parse_all("img")
+
   print "Done.\nDownloading resume files... "
   parse_all("resume")
 
