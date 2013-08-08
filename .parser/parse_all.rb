@@ -43,6 +43,7 @@ def parse_all(type)
     last_name = ""
 
     dl_file = File.open(file_path, "w") if (type == "img" or type == "resume")
+
     line.split("\t").each do |item|
       count += 1
 
@@ -136,10 +137,9 @@ def parse_all(type)
     end
   end
 
-
-  if (type == "img" or type == "resume")
-    dl_file << txt
-    dl_file.close
-  end
+  # if (type == "img" or type == "resume")
+  #   dl_file << txt
+  #   dl_file.close
+  # end
 
 end
