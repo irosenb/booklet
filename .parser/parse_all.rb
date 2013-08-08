@@ -13,6 +13,9 @@ end
 
 def parse_all(type)
 
+  # move_md = `mv ../_posts/*.md bak/`
+  # move_img = `mv ../img/* bak/`
+
   count = 0
   id = 1
 
@@ -38,6 +41,7 @@ def parse_all(type)
     txt ||= ""
     first_name = ""
     last_name = ""
+
     dl_file = File.open(file_path, "w") if (type == "img" or type == "resume")
     line.split("\t").each do |item|
       count += 1
@@ -61,6 +65,11 @@ def parse_all(type)
           
           if valid_url(url)
             download("#{url}", id, first_name, last_name, dir)
+
+            if type == "img"
+              ext = url.match(/(\w{2,})$/)
+              FileUtils.cp("img/#{first_name}#{last_name}.#{ext}", "../img/")
+            end
           end
 
         end
@@ -121,11 +130,8 @@ def parse_all(type)
       student.close
 
       if type == "markdown"
-        #        move = `mv ../_posts/*.md bak/` if id == 0
         FileUtils.cp("markdown/#{Date.today}-#{first_name}#{last_name}.md",
                      "../_posts/#{Date.today}-#{first_name}#{last_name}.md")
-        # Probably also remove already existing md files so that there are
-        # no conflicts in the _posts dir
       end
     end
   end
