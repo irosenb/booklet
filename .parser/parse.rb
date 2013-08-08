@@ -9,6 +9,7 @@ require 'wuparty'
 require 'fileutils'
 
 require_relative 'parse_all'
+require_relative 'scrape'
 require_relative 'markdown/parse_md'
 require_relative 'txt/parse_txt'
 require_relative 'img/parse_img'
@@ -49,4 +50,5 @@ def parser
   print "\nCompleted parsing and downloading.\n"
 end
 
+scraper
 parser

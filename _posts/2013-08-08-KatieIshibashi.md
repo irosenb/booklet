@@ -17,7 +17,8 @@ teamtreehouse: http://teamtreehouse.com/usk
 codeschool: https://www.codeschool.com/users/usk
 picture: KatieIshibashi.jpg
 interests: Ruby,yoga, backpack trips through random nations, theater, determining the identity of my CSA vegetables
-bio: "Katie Barry Ishibashi has been a preschool teacher in Vietnam, a concierge in Vermont, and, for the past seven years, worked in online media in New York, where she also completed a graduate degree in International Relations. After working with web technologies for seven years, Katie recently decided to delve much deeper into code, and has been thrilled to learn Ruby at the Flatiron School.\r\n\r\nWhen not writing descriptions of herself in the third person, Katie enjoys traveling, long brunches, theater, train rides to Montauk, and learning new recipes. Her favorite flavor of ice cream is mint chocolate chip, and her techie-to-English translation skills are excellent."
+bio: "Katie Barry Ishibashi has been a preschool teacher in Vietnam, a concierge in Vermont, and, for the past seven years, worked in online media in New York, where she also completed a graduate degree in International Relations. After working with web technologies for seven years, Katie recently decided to delve much deeper into code, and has been thrilled to learn Ruby at the Flatiron School.
+- When not writing descriptions of herself in the third person, Katie enjoys traveling, long brunches, theater, train rides to Montauk, and learning new recipes. Her favorite flavor of ice cream is mint chocolate chip, and her techie-to-English translation skills are excellent."
 looking: Yes
 live: NYC-area
 other: I would be eternally grateful if I never had to leave Brooklyn ;)

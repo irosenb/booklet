@@ -15,10 +15,12 @@ coderwall: https://coderwall.com/dmanaster
 hackernews: dmanaster
 teamtreehouse: http://teamtreehouse.com/dmanaster
 codeschool: http://www.codeschool.com/users/dmanaster
-picture: 
-interests: 
-bio: ""
-looking: 
-live: 
+picture: DavidManaster.JPG
+interests: My dog, Cirri\r\nTraveling\r\nSkiing\r\nHiking
+bio: "A NYC native, David graduated from Binghamton University with a degree in economics, but soon caught the entrepreneurial bug.
+- After a short stint at Monster, he founded ERE Media. The company grew to become the leading independent publisher and conference organizer for the recruiting profession before David passed the baton to a new CEO in September 2012.
+- David has a passion for building. He joined Flatiron School so he could bring ideas to life.\r\n"
+looking: Maybe
+live: NYC-area
 other: 
 ---
