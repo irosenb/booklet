@@ -58,8 +58,25 @@ tr {
 	display: block;
 }
 
+div.left {
+   float: left; 
+   clear: both;
+}
+
+div.right {
+	float: left;
+}
+
 .field:after {
 	content: ":";
+}
+
+.twitter:before {
+	content: "@";
+}
+
+.presentation:before {
+	content: "+";
 }
 
 .visible-print  { display: inherit !important; }
