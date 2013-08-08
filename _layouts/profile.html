@@ -25,7 +25,7 @@
 		<br>
 		<br>
 		<br>
-		<table class="info" cellspacing="0">
+		<!-- <table class="info" cellspacing="0">
 			<tr>
 				<td class="field">Email</td>
 				<td>{{ page.email }} </td>
@@ -40,7 +40,7 @@
 			</tr>
 			<tr>
 				<td class="field">Twitter</td>
-				<td>{{ page.twitter }} </td>
+				<td class="twitter">{{ page.twitter }} </td>
 			</tr>
 			<tr>
 				<td class="field">Meetup Presentation</td>
@@ -50,7 +50,29 @@
 				<td class="field">Blog</td>
 				<td>{{ page.blog }} </td>
 			</tr>
-		</table>
+		</table> -->
+
+		<div class="info">
+			<div class="field left">Email</div>
+			<div class="right">{{ page.email }} </div>
+			<div class="field left">Phone</div>
+			<div class="right">{{ page.phone }} </div>
+			<div class="field left">Github</div>
+			<div class="right">{{ page.github }} </div>
+			<div class="field left">Twitter</div>
+			<div class="right twitter">{{ page.twitter }} </div>
+			<div class="field left">Meetup Presentation</div>
+			{% for item in page.presentation %}
+			<div class="left presentation">{{ item }} </div> <!-- presentations? -->
+			{% endfor %}
+			<div class="field left">Blog</div> 
+			<div class="right">{{ page.blog }} </div> <!-- Blog posts? -->
+			{% for post in page.blog %}
+			<div class="left"> {{ post }} </div>
+			{% endfor %}
+		</div>
 	</div>
+
+	<p> Hello world </p>
 </body>
 </html>
