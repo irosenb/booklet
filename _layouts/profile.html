@@ -17,6 +17,9 @@
 </head>
 <body>
 	<div class="contain">
+		{% capture full_name %} 
+		{{ page.first_name }} {{ page.last_name }}
+		{% endcapture %}
 		<div class="header">
 			<a class="smaller" href="/">
 				<img class="logo smaller" src="/img/flatiron-school.png">
@@ -26,31 +29,44 @@
 		<br>
 		<br>
 
-		<div class="info">
-			<div class="field left">Email</div>
+		<div class="info col-7">
+			<div class="field bold left">Email</div>
 			<div class="right">{{ page.email }} </div>
-			<div class="field left">Phone</div>
+			<div class="field bold left">Phone</div>
 			<div class="right">{{ page.phone }} </div>
-			<div class="field left">Github</div>
+			<div class="field bold left">Github</div>
 			<div class="right">{{ page.github }} </div>
-			<div class="field left">Twitter</div>
+			<div class="field bold left">Twitter</div>
 			<div class="right twitter">{{ page.twitter }} </div>
-			<div class="field left">Meetup Presentation</div>
+			<div class="field bold left">Meetup Presentation</div>
 			{% for item in page.presentation %}
 			<div class="left presentation">{{ item }} </div> <!-- presentations? -->
 			{% endfor %}
-			<div class="field left">Blog</div> 
+			<div class="field bold left">Blog</div> 
 			<div class="right">{{ page.blog }} </div> <!-- Blog posts? -->
 			{% for post in page.blog %}
 			<div class="left"> {{ post }} </div>
 			{% endfor %}
 		</div>
-		<div class="person">
-			<h2 class="name">{{ page.first_name }} <b>{{ page.last_name }}</b> </h2>
+		<div class="person col-5">
+			<h2 class="name">{{ page.first_name }} <b>{{ page.last_name | upcase }}</b> </h2>
 			<p class="profile">Profile</p>
 			<div class="id">{{ page.profile_num }} </div>
+			<img src="{{ page.img }} " alt="{{ full_name }}">
+			<div class="interests">
+				<ul>
+				{% for point in page.interests %}
+					<li>{{ point }} </li>
+				{% endfor %}
+				</ul>
+			</div>
 		</div>
-		<div class="bio">{{page.bio}} </div>
+		<div class="bio">
+			<h5 class="heading bold">Bio</h5>
+			{% for part in page.bio %}
+				<p>{{ part }} </p>
+			{% endfor %}
+		</div>
 	</div>
 </body>
 </html>
