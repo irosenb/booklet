@@ -6,6 +6,9 @@
 # This file needs to be cleaned up. Also, parsing can probably be combined,
 # rather than being done four times (once for each type).
 
+# TODO:
+# Modularize (use `extract method` in several places in #parse_all)
+
 def valid_url(url)
   res = Net::HTTP.get_response(URI.parse(url))
   res.code.to_i == 200
@@ -101,8 +104,9 @@ def parse_all(type)
           end
 
         elsif count == 18
-          item = item.gsub( /(\.)(\w{2,})/, "\\1\n\n\\2" )
+          item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\n- \\3" )
           item = "\"#{item}\""
+
         end
 
         if count < 22

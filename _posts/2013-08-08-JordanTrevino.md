@@ -17,7 +17,9 @@ teamtreehouse: http://teamtreehouse.com/jordantrevino
 codeschool: http://www.codeschool.com/users/railer
 picture: JordanTrevino.png
 interests: guitar, tennis, creative writing, philosophy, traveling, consuming non-fiction books, learning new skills
-bio: "Jordán attended kindergarten in Indonesia, and studied Anthropology and other esoteric topics at Yale University. As a management consultant, he has advised clients in the US, Switzerland, Germany and Austria focusing on growth strategy in the healthcare and food industries.\r\n\r\nRecently he has bootstrapped and produced several web products, such as a mobile application for photocontests on Instagram. He enjoys ruby immensely, and believes code that dispenses with excessive adornments (such as semi-colons!) can be elegant. \r\n\r\nJordán enjoys animated discussions involving concept and speculation. He is a slowly improving guitarist, an enthusiastic but frequently defeated tennis player, and a writer of obscure essays. He is fluent in English and Spanish and a passable German speaker. "
+bio: "Jordán attended kindergarten in Indonesia, and studied Anthropology and other esoteric topics at Yale University. As a management consultant, he has advised clients in the US, Switzerland, Germany and Austria focusing on growth strategy in the healthcare and food industries.
+- Recently he has bootstrapped and produced several web products, such as a mobile application for photocontests on Instagram. He enjoys ruby immensely, and believes code that dispenses with excessive adornments (such as semi-colons!) can be elegant.
+- Jordán enjoys animated discussions involving concept and speculation. He is a slowly improving guitarist, an enthusiastic but frequently defeated tennis player, and a writer of obscure essays. He is fluent in English and Spanish and a passable German speaker. "
 looking: Maybe
 live: NYC-area
 other: 

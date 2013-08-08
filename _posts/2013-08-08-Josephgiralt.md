@@ -17,7 +17,10 @@ teamtreehouse: http://teamtreehouse.com/josephgiralt
 codeschool: http://www.codeschool.com/users/weatherlight
 picture: Josephgiralt.jpg
 interests: thai boxing, slide blues guitar, political intrigue, building robots
-bio: "Joseph Giralt is known among friends as the most interesting man in the world.  \r\n\r\nDuring his time in the US Army, he became airborne qualified and passed the Special Forces Assessment & Selection course.  \r\n\r\nHe loves kittens, but adores all animals.  \r\n\r\nJoe has earned a living as a stained glass mosaic artist, bartender, dj, boxing instructor, Muay Thai fighter, and most recently a director of operations for a hardware start-up - but most recently, he's been veritably glued to his computer screen."
+bio: "Joseph Giralt is known among friends as the most interesting man in the world.
+- During his time in the US Army, he became airborne qualified and passed the Special Forces Assessment & Selection course.
+- He loves kittens, but adores all animals.
+- Joe has earned a living as a stained glass mosaic artist, bartender, dj, boxing instructor, Muay Thai fighter, and most recently a director of operations for a hardware start-up - but most recently, he's been veritably glued to his computer screen."
 looking: Yes
 live: NYC-area
 other: 
