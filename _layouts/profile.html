@@ -25,32 +25,6 @@
 		<br>
 		<br>
 		<br>
-		<!-- <table class="info" cellspacing="0">
-			<tr>
-				<td class="field">Email</td>
-				<td>{{ page.email }} </td>
-			</tr>
-			<tr>
-				<td class="field">Phone</td>
-				<td>{{ page.phone }} </td>
-			</tr>
-			<tr>
-				<td class="field">Github</td>
-				<td>{{ page.github }} </td>
-			</tr>
-			<tr>
-				<td class="field">Twitter</td>
-				<td class="twitter">{{ page.twitter }} </td>
-			</tr>
-			<tr>
-				<td class="field">Meetup Presentation</td>
-				<td class="presentation">{{ page.presentation }} lorem is</td>
-			</tr>
-			<tr>
-				<td class="field">Blog</td>
-				<td>{{ page.blog }} </td>
-			</tr>
-		</table> -->
 
 		<div class="info">
 			<div class="field left">Email</div>
@@ -72,7 +46,10 @@
 			{% endfor %}
 		</div>
 	</div>
-
-	<p> Hello world </p>
+	<div class="person">
+		<h2 class="name">{{ page.first_name }} <b>{{ page.last_name }}</b> </h2>
+		<p class="profile">Profile</p>
+		<div class="id">{{ page.profile_num }} </div>
+	</div>
 </body>
 </html>
