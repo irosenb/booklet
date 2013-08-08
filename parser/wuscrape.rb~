@@ -1,0 +1,45 @@
+
+
+
+# NOTE! REMOVE THE API KEY FROM GITHUB! Could just read it in from a file not
+# in the project directory.
+
+# See https://help.github.com/articles/remove-sensitive-data
+
+
+
+
+#!/usr/bin/env ruby
+# Scrape data from Wufoo survey.
+
+require 'wuparty'
+require 'fileutils'
+
+ACCOUNT = 'flatironschool'
+API_KEY = '5YTK-TRT6-9OEF-TQLT'  # Will not currently work; key has changed.
+FORM_ID = 'ruby-002-student-profile-survey'
+
+wufoo = WuParty.new(ACCOUNT, API_KEY)
+form = wufoo.form(FORM_ID)
+
+FileUtils.mv('bak/sps.txt', 'bak/sps.txt.bak')
+
+File.open("bak/sps.txt", "w") do |sps|
+
+  form.entries(:limit => 1000).each do |student|
+    count = 0
+    txt = ""
+
+    student.each do |field|
+      count += 1
+      txt << ("%s\t" % (field[1].inspect)[1..-2]) if count < 22
+    end
+
+    txt << "\n"
+    sps.write(txt)
+  end
+  # Has the file closed?..
+end
+
+# Feed each field plus a tab and then a \n after each student's
+# info into sps.txt. Bam.
