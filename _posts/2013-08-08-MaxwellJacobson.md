@@ -16,7 +16,7 @@ hackernews:
 teamtreehouse: 
 codeschool: 
 picture: 
-interests: 
+interests: ""
 bio: ""
 looking: 
 live: 
