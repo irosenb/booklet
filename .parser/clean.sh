@@ -4,19 +4,30 @@
 
 shopt -s extglob
 
-cd img
+pwd
+#cd img
 #cp parse* ../bak/parse_img.rb
-rm !(parse*)
+#rm !(img/parse*)
+rm img/parse*
+pwd
 #pwd
-cd ../txt
+#cd ../txt
 #cp parse* ../bak/parse_txt.rb
-rm !(parse*)
+#rm !(txt/parse*)
+rm txt/parse*
+pwd
 #pwd
-cd ../markdown
+#cd ../markdown
 #cp parse* ../bak/parse_md.rb
-rm !(parse*)
+#rm !(markdown/parse*)
+rm markdown/parse*
 #pwd
-cd ../resume
+pwd
+#cd ../resume
 #cp parse* ../bak/parse_resume.rb
-rm !(parse*)
+#rm !(resume/parse*)
+rm resume/parse*
 #pwd
+
+
+# cd and rm dirs are not maintained

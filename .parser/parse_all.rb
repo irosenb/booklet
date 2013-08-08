@@ -106,13 +106,11 @@ def parse_all(type)
         elsif count == 18
           item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\n- \\3" )
           item = "\"#{item}\""
-#          print(item)
 
         end
 
         if count < 22
           txt << "#{Rows[count]}: #{item}\n"
-         # print txt
         end
       end
 
