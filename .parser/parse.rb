@@ -3,7 +3,6 @@
 
 require 'rubygems'
 require 'date'
-#require 'curb' # ?
 require 'net/http'
 require 'open-uri'
 require 'wuparty'
