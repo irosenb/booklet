@@ -72,7 +72,7 @@ def parse_all(type)
 
             if type == "img"
               ext = url.match(/(\w{2,})$/)
-              FileUtils.cp("img/#{first_name}#{last_name}.#{ext}", "../img/")
+              FileUtils.cp("img/#{first_name}#{last_name}.#{ext}", "../img/student/")
             end
           end
 
