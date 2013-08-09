@@ -1,3 +1,7 @@
+---
+---
+
+
 /* Global */
 
 body {
@@ -37,14 +41,6 @@ tr {
 	line-height: 1.5em;
 }
 
-/* .top { */
-/*     text-align: inline-block; */
-/* } */
-
-.id {
-    width: 20%;
-/*    padding-top: 500px;*/
-}
 
 .header {
 	text-align: center;
@@ -82,6 +78,7 @@ tr {
 	text-align: right;
 }
 
+
 .presentation {
 	/*float: right; */
 	position: absolute;
@@ -104,7 +101,8 @@ tr {
 .box {
 	background-color: red;
 	color: white;
-	padding-left: 5px;
+	padding: 5px;
+
 }
 
 div.left {
@@ -121,9 +119,12 @@ div.right {
 }
 
 .profile-pic {
+	background-image: url('{{ page.first_name }}{{ page.last_name }}.jpg');
 	float: right;
-	/*width: inherit;*/
-	max-width: 100%;
+	max-width: 206px;
+	max-height: 177px;
+	/*max-width: 100%;*/
+	/*max-height: 50%;*/
 }
 
 .twitter:before {
@@ -152,13 +153,14 @@ div.right {
 #interests li {
 	padding-left: 1em;
 	text-indent: -1em;
+	vertical-align: text-bottom;
 	/*vertical-align: middle;*/
 }
 
 #interests li:before {
 	content: "+";
 	padding-right: 5px;
-	vertical-align: middle;
+	vertical-align: baseline;
 	display: inline;
 	padding-top: 0;
 	margin-bottom: .5em;
