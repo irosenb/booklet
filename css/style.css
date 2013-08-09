@@ -26,11 +26,11 @@ tr {
 }
 
 .site {
-  font-size: 115%;
-  /*text-align: justify;*/
-  width: inherit;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+	font-size: 115%;
+	/*text-align: justify;*/
+	width: inherit;
+	margin: 3em auto 2em;
+	line-height: 1.5em;
 }
 
 .header {
@@ -91,11 +91,13 @@ tr {
 
 .box {
 	background-color: red;
+	color: white;
+	padding-left: 5px;
 }
 
 div.left {
-   float: left; 
-   clear: both;
+	float: left; 
+	clear: both;
 }
 
 div.right {
@@ -106,9 +108,51 @@ div.right {
 	content: ":";
 }
 
+.profile-pic {
+	float: right;
+	/*width: inherit;*/
+	max-width: 100%;
+}
+
 .twitter:before {
 	content: "@";
 }
+
+/*#interests {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+#interests li:before {
+	content: "+";
+	margin-right: 5px;
+	}*/
+
+#interests {
+	list-style: none;
+	display: table-cell;
+	padding: 0;
+	margin: 0;
+}
+
+#interests li {
+	padding-left: 1em;
+	text-indent: -1em;
+	/*vertical-align: middle;*/
+}
+
+#interests li:before {
+	content: "+";
+	padding-right: 5px;
+	vertical-align: middle;
+	display: inline;
+	padding-top: 0;
+	margin-bottom: .5em;
+
+}
+
 
 .presentation:before  {
 	content: "+";
