@@ -5,7 +5,7 @@ first_name: Micah
 last_name: Corn
 phone: 718-428-5884
 email: micahc126@gmail.com
-resume: MicahCorn.doc
+resume: MicahCorn.pages
 linkedin: http://www.linkedin.com/pub/micah-corn/54/846/b95
 blog: micahrcorn@github.io
 twitter: micahcorn

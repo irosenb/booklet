@@ -1,3 +1,5 @@
+/* Global */
+
 body {
 	/*width: 8.5in;
 	height: 11.5in;*/
@@ -9,6 +11,10 @@ body {
 table { 
 	display:block; 
 	position:relative; 
+}
+
+tr {
+	display: inline;
 }
 
 .contain {
@@ -63,9 +69,6 @@ table {
 	text-align: right;
 }
 
-tr {
-	display: inline;
-}
 
 .presentation {
 	/*float: right; */
@@ -84,6 +87,10 @@ tr {
 
 .presentation .post {
 
+}
+
+.box {
+	background-color: red;
 }
 
 div.left {
@@ -109,8 +116,8 @@ div.right {
 
 .visible-print  { display: inherit !important; }
 
-/* Trying to print on one page. Not working. */
 
+/* Trying to print on one page. Not working. */
 
 @media print {
 	body {

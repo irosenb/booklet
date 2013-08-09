@@ -51,21 +51,22 @@
 		<div class="person col-5">
 			<h2 class="name">{{ page.first_name }} <b>{{ page.last_name | upcase }}</b> </h2>
 			<p class="profile">Profile</p>
-			<div class="id">{{ page.profile_num }} </div>
-			<img src="{{ page.img }} " alt="{{ full_name }}">
-			<div class="interests">
-				<ul>
-				{% for point in page.interests %}
-					<li>{{ point }} </li>
-				{% endfor %}
-				</ul>
-			</div>
+			<div class="id box">{{ page.profile_num }} </div>
+			<img src="/img/{{ page.first_name }}{{ page.last_name }}.jpg" alt="{{ full_name }}">
 		</div>
-		<div class="bio">
-			<h5 class="heading bold">Bio</h5>
+		<div class="bio col-7">
+			<h5 class="heading bold	box">Bio</h5>
 			{% for part in page.bio %}
 				<p>{{ part }} </p>
 			{% endfor %}
+		</div>
+		<div class="interests col-5">
+			<h5 class="heading bold box">Interests</h5>	
+			<ul>
+			{% for point in page.interests %}
+				<li>{{ point }} </li>
+			{% endfor %}
+			</ul>
 		</div>
 	</div>
 </body>

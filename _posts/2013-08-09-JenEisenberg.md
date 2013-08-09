@@ -5,7 +5,7 @@ first_name: Jen
 last_name: Eisenberg
 phone: 908-472-3113
 email: jeneisenberg5@gmail.com
-resume: JenEisenberg.docx
+resume: JenEisenberg.pdf
 linkedin: http://www.linkedin.com/in/jeneisenberg
 blog: jeneisenberg.com
 twitter: jeisenberg0
