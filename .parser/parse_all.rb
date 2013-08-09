@@ -105,25 +105,31 @@ def parse_all(type)
 
 
         elsif count == 17
+          item = "\n- #{item}"
           if item =~ /,/
             item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
           end
           if item =~ /\\r\\n/
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
-
-          # item.capitalize ???
-          item = "\"#{item}\""
+          item = item.gsub(/^\W*(\w)/){ |m| 
+                           m.sub($1, $1.upcase) }
+          item = "#{item}"
+          #item = item[1..-1]
 
         elsif count == 18
+          item = "\n- #{item}"
           item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\n- \\3" )
+          item = "#{item}"
+
+        elsif count == 21
           item = "\"#{item}\""
 
         end
 
         if count < 22
           txt << "#{Rows[count]}: #{item}\n"
-#          puts txt
+          #          puts txt
         end
       end
 
