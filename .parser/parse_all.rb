@@ -112,7 +112,6 @@ def parse_all(type)
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
 
-
           # item.capitalize ???
           item = "\"#{item}\""
 
@@ -124,7 +123,7 @@ def parse_all(type)
 
         if count < 22
           txt << "#{Rows[count]}: #{item}\n"
-          puts txt
+#          puts txt
         end
       end
 

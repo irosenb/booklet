@@ -4,7 +4,8 @@
 
 shopt -s extglob
 
-rm img/* #.jpg
+rm img/* #.jpg, .png
 rm txt/* #.txt
 rm markdown/* #.md
-rm resume/* #.doc
+rm resume/* #.doc, .docx, .pdf
+rm ../_posts/* #.md (different formats?)
