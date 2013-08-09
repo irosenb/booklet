@@ -37,6 +37,7 @@ tr {
 	line-height: 1.5em;
 }
 
+
 .header {
 	text-align: center;
 }
@@ -123,7 +124,7 @@ div.right {
 }
 
 /*#interests {
-	list-style: none;
+	list-style: no
 	margin-left: 0;
 	padding-left: 1em;
 	text-indent: -1em;
@@ -177,4 +178,3 @@ div.right {
 @page {
 	size: 8.5in 11in;
 }
-
