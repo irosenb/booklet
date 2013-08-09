@@ -1,11 +1,24 @@
+/* Global */
+
 body {
-	width: 2250px;
-	height: 4200px;
+	/*width: 8.5in;
+	height: 11.5in;*/
+	/*size: 8.5in 11in;*/
+	width: 100%;
+	height: 100%;
 }
 
 table { 
 	display:block; 
 	position:relative; 
+}
+
+tr {
+	display: inline;
+}
+
+.uline {
+        text-decoration: underline;
 }
 
 .contain {
@@ -17,15 +30,19 @@ table {
 }
 
 .site {
-  font-size: 115%;
-  /*text-align: justify;*/
-  width: inherit;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+	font-size: 115%;
+	/*text-align: justify;*/
+	width: inherit;
+	margin: 3em auto 2em;
+	line-height: 1.5em;
 }
 
 .header {
 	text-align: center;
+}
+
+.info .person {
+	vertical-align: middle;
 }
 
 .smaller {
@@ -36,20 +53,26 @@ table {
 .smaller {
 	width: 30%;
 	/*float: left;*/
-	margin-top: 40px 
+	margin-top: 40px;	 
 }
 
 .field {
-	font-weight: bold;
-	text-transform: uppercase;
-	/*text-align: right;*/
+	
 	padding-right: 0.5em;
 	float: left;
 }
 
-tr {
-	display: inline;
+.bold {
+	font-weight: bold;
+	text-transform: uppercase;
 }
+
+.profile { text-transform: uppercase; }
+
+.person * {
+	text-align: right;
+}
+
 
 .presentation {
 	/*float: right; */
@@ -58,17 +81,100 @@ tr {
 	display: block;
 }
 
+.person {
+	float: right;
+}
+
+.bio {
+	float: left;
+}
+
+.presentation .post {
+
+}
+
+.box {
+	background-color: red;
+	color: white;
+	padding-left: 5px;
+}
+
+div.left {
+	float: left; 
+	clear: both;
+}
+
+div.right {
+	float: left;
+}
+
 .field:after {
 	content: ":";
+}
+
+.profile-pic {
+	float: right;
+	/*width: inherit;*/
+	max-width: 100%;
+}
+
+.twitter:before {
+	content: "@";
+}
+
+/*#interests {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+#interests li:before {
+	content: "+";
+	margin-right: 5px;
+	}*/
+
+#interests {
+	list-style: none;
+	display: table-cell;
+	padding: 0;
+	margin: 0;
+}
+
+#interests li {
+	padding-left: 1em;
+	text-indent: -1em;
+	/*vertical-align: middle;*/
+}
+
+#interests li:before {
+	content: "+";
+	padding-right: 5px;
+	vertical-align: middle;
+	display: inline;
+	padding-top: 0;
+	margin-bottom: .5em;
+
+}
+
+
+.presentation:before  {
+	content: "+";
 }
 
 .visible-print  { display: inherit !important; }
 
 
+/* Trying to print on one page. Not working. */
+
 @media print {
-	.thumbnail {
-		float: right;	
+	body {
+		width: 100%;
+		height: 100%;
 	}
 }
 
+@page {
+	size: 8.5in 11in;
+}
 

@@ -1,1 +1,10 @@
 _site
+*~
+.parser/wuscrape.rb*
+.parser/scrape.rb*
+.parser/img/*
+.parser/txt/*
+.parser/markdown/*
+.parser/resume/*
+img/*
+_posts/*
