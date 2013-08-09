@@ -107,20 +107,28 @@ def parse_all(type)
           # elegantly are wrapped around the array elements.
 
         elsif count == 17
-          item = "\n- \"#{item}"
+          item = "\n- #{item}"
           if item =~ /,/
-            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\"\n- \"\\2" )
+            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
           end
           if item =~ /\\r\\n/
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
+          # Capitalize
           item = item.gsub(/^\W*(\w)/){ |m| 
                            m.sub($1, $1.upcase) }
-          item = "#{item}\""
+
+          # Wrap each line in quotes
+          item = item.gsub(/(- )+([\w. -]+)[\n|$]*/, "- \"\\2\"\n")
+
+          # Can we combine the above regex into a single, more elegant
+          # capture and substitution?
+          item = "#{item}"
 
         elsif count == 18
           item = "\n- \"#{item}"
           item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
+#          item = item.gsub(/(- )+([\w. -]+)[\n|$]*/, "- \"\\2\"\n")
           item = "#{item}\""
 
         elsif count == 21
