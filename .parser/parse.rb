@@ -10,10 +10,10 @@ require 'fileutils'
 
 require_relative 'parse_all'
 require_relative 'scrape'
-require_relative 'markdown/parse_md'
-require_relative 'txt/parse_txt'
-require_relative 'img/parse_img'
-require_relative 'resume/parse_resume'
+# require_relative 'markdown/parse_md'
+# require_relative 'txt/parse_txt'
+# require_relative 'img/parse_img'
+# require_relative 'resume/parse_resume'
 
 # Ideally get rid of this first "nil" field...
 Rows = ["nil",

@@ -16,7 +16,15 @@ hackernews:  dfriedm
 teamtreehouse: http://teamtreehouse.com/dfriedm
 codeschool: http://www.codeschool.com/users/dfriedm
 picture: DanielFriedman.jpg
-interests: Distilling spirits, volunteering, climbing and mountaineering, literature & philosophy, 3d printing, sculpture, getting lost in foreign countries, outdoor sports, politics
+interests: "Distilling spirits
+- volunteering
+- climbing and mountaineering
+- literature & philosophy
+- 3d printing
+- sculpture
+- getting lost in foreign countries
+- outdoor sports
+- politics"
 bio: "Dan's been trying to fix problems, help people, and save the world since he was a little kid. He graduated from Williams College and Johns Hopkins SAIS (Nanjing), worked in national policy and politics, and has extensive international work and study experience. He was a firefighter and emt when younger, started an animal rescue non-profit in Taiwan, and loves you.  Not like that.  In a good way.
 - He taught himself enough Chinese in one year to do his graduate work on law and politics entirely in Mandarin, and returned to the US to support the first Obama campaign. Later he stuck his nose into dirty, dark corporate places on three continents as an investigator/analyst with an international consulting company run by the former director of the FBI, and solved puzzles filled with complex networks of people, behaviors, and laws.
 - After starting a startup that aimed to democratize access to wifi connection points, he began learning code.  All the lights clicked and haven't stopped since.

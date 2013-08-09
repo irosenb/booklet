@@ -103,6 +103,12 @@ def parse_all(type)
             item = "#{first_name}#{last_name}.#{ext}"
           end
 
+
+        elsif count == 17
+          item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+          # item.capitalize ???
+          item = "\"#{item}\""
+
         elsif count == 18
           item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\n- \\3" )
           item = "\"#{item}\""
@@ -111,6 +117,7 @@ def parse_all(type)
 
         if count < 22
           txt << "#{Rows[count]}: #{item}\n"
+          puts txt
         end
       end
 

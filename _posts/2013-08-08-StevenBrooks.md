@@ -16,7 +16,12 @@ hackernews: none
 teamtreehouse: treehouse.com/stevenabrooks
 codeschool: codeschool.come/stevenabrooks
 picture: StevenBrooks.jpg
-interests: Programming, sports, entertainment, exercise, food, the financial markets
+interests: "Programming
+- sports
+- entertainment
+- exercise
+- food
+- the financial markets"
 bio: "Steven grew up in northern New Jersey with two brothers, and was raised playing as many sports as possible. He attended Wake Forest University in Winston Salem, North Carolina. After playing on the Wake Forest baseball team, he joined the Kansas City Royals as a Centerfielder.
 - While a member of the Royals' organization, Steven started a company that connects students and their families with discounts on goods and services. He can't wait to bring his new development chops to more, and bigger, real-world projects."
 looking: Yes

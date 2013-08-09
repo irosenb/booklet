@@ -16,7 +16,15 @@ hackernews: jeisenberg0
 teamtreehouse: http://teamtreehouse.com/jennifereisenberg
 codeschool: https://www.codeschool.com/users/jeneisen
 picture: JenEisenberg.jpg
-interests: positive psychology, polyglots, biking, clean eating, Michigan Football, NY Giants, viral marketing, user interfaces, happiness
+interests: "positive psychology
+- polyglots
+- biking
+- clean eating
+- Michigan Football
+- NY Giants
+- viral marketing
+- user interfaces
+- happiness"
 bio: "Jen Eisenberg is a rising senior at the University of Michigan studying Linguistics & Spanish - though the majority of her learning takes place outside of the typical classroom setting. As an enthusiastic tech team member of MPowered organization on campus, she pounces on the opportunity to help foster student entrepreneurship and pursuit of opportunity via start-up bootcamps, hackathons, pitch summits and more.
 - During her summers here in NYC, she hasn't ever strayed far from the buzzing tech scene. She was a product management intern for both Animoto and Grovo analyzing inventory statistics, running user tests, and whatever else these go-getter companies needed. When she's not running between events, she loves to strum her ukulele, start and finish a book in one sitting, hum acapella harmonies, kickbox early in the day, travel like anything but a tourist, and of course, enjoy all the food along the way."
 looking: Yes

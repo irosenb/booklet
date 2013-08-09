@@ -16,7 +16,12 @@ hackernews: https://news.ycombinator.com/user?id=jackaltman
 teamtreehouse: FAKE
 codeschool: FAKE
 picture: JackAltman.jpg
-interests: Startups, hardware, music, scotch, chess, settlers of catan
+interests: "Startups
+- hardware
+- music
+- scotch
+- chess
+- settlers of catan"
 bio: "Jack is currently an investor at Hydrazine Capital, where he makes investments in seed stage companies across a number of different verticals. Before Hydrazine, he had a brief stint as an investment banker. Jack graduated from Princeton with a degree in Economics."
 looking: Maybe
 live: NYC-area

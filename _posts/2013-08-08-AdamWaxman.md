@@ -16,7 +16,12 @@ hackernews: awaxman11
 teamtreehouse: http://teamtreehouse.com/adamwaxman
 codeschool: https://www.codeschool.com/account
 picture: AdamWaxman.jpg
-interests: soccer, mobile apps, running, mashups, settlers of catan, sustainable food
+interests: "soccer
+- mobile apps
+- running
+- mashups
+- settlers of catan
+- sustainable food"
 bio: "Adam is a philosopher turned banker turned programmer.  After graduating from Emory University in Atlanta, GA he chose to dive head first into the business world as an investment banking analyst.  Yearning to learn more and be closer to building a product vs. analyzing numbers, he decided to quit his job in January to learn to code full-time.
 - Born outside of Cleveland, OH, he appreciates meeting fellow Midwesterners and is an avid Cleveland sports fan. He also enjoys playing sports and is currently trying to prolong is college soccer career w/ pickup games around the city."
 looking: Yes

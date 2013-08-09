@@ -16,7 +16,10 @@ hackernews: weatherlight
 teamtreehouse: http://teamtreehouse.com/josephgiralt
 codeschool: http://www.codeschool.com/users/weatherlight
 picture: Josephgiralt.jpg
-interests: thai boxing, slide blues guitar, political intrigue, building robots
+interests: "thai boxing
+- slide blues guitar
+- political intrigue
+- building robots"
 bio: "Joseph Giralt is known among friends as the most interesting man in the world.
 - During his time in the US Army, he became airborne qualified and passed the Special Forces Assessment & Selection course.
 - He loves kittens, but adores all animals.

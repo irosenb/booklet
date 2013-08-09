@@ -16,7 +16,7 @@ hackernews: 1
 teamtreehouse: 1
 codeschool: 1
 picture: RebekahRombom.pdf
-interests: Stuff
+interests: "Stuff"
 bio: "Things"
 looking: Yes
 live: NYC-area
