@@ -17,6 +17,10 @@ tr {
 	display: inline;
 }
 
+.uline {
+        text-decoration: underline;
+}
+
 .contain {
 	margin-left: 50px;
 }
