@@ -22,7 +22,9 @@ interests:
 - Popular Science Books
 - Running 
 
-bio: "Born in Philadelphia but raised in Northern Virginia, Thomas has a penchant for visiting new cities and new bars. He studied Chemistry in college and worked for short time as a chemist. Less than a year ago Thomas decided he'd pick up coding because he wanted to build cool stuff. Now, Thomas feels, rightly or wrongly, that he's reached that sweet spot in skill level where no programming challenge is too advanced. (He still thinks of himself as a beginner, though.)\r\n\r\nThomas also has a soft spot for long-distance running--ask him to go for a run with you if you're into that :)"
+bio: 
+- "Born in Philadelphia but raised in Northern Virginia, Thomas has a penchant for visiting new cities and new bars. He studied Chemistry in college and worked for short time as a chemist. Less than a year ago Thomas decided he'd pick up coding because he wanted to build cool stuff. Now, Thomas feels, rightly or wrongly, that he's reached that sweet spot in skill level where no programming challenge is too advanced. (He still thinks of himself as a beginner, though.)"
+- "Thomas also has a soft spot for long-distance running--ask him to go for a run with you if you're into that :)"
 looking: Yes
 live: NYC-area
 other: 
