@@ -52,6 +52,15 @@
 			<div class="left"> {{ post }} </div>
 			{% endfor %}
 		</div>
+<<<<<<< HEAD
+=======
+		<div class="person col-5">
+			<h2 class="name">{{ page.first_name }} <b>{{ page.last_name | upcase }}</b> </h2>
+			<p class="profile">Profile</p>
+			<div class="id box">{{ page.profile_num }} </div>
+			<img class="profile-pic" src="/img/student/{{ page.first_name }}{{ page.last_name }}.jpg" alt="{{ full_name }}">
+		</div>
+>>>>>>> 1fb795b132fa1dc55d4522f4247b47e8ba8af5d7
 		<div class="bio col-7">
 			<h5 class="heading bold	box">Bio</h5>
 			{% for part in page.bio %}
@@ -65,6 +74,15 @@
 				<li>{{ point }} </li>
 			{% endfor %}
 			</ul>
+		</div>
+		<div class="notes col-12">
+			<h5 class="notes heading bold box">Notes</h5>
+			  <hr class="hr2"/>
+			  <hr class="hr1"></hr>
+			  <hr class="hr1"></hr>
+			  <hr class="hr1"></hr>
+			  <hr class="hr1"></hr>
+			  <hr class="hr1"></hr>
 		</div>
 	</div>
 </body>

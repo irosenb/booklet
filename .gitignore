@@ -6,5 +6,5 @@ _site
 .parser/txt/*
 .parser/markdown/*
 .parser/resume/*
-img/*
+img/student/*
 _posts/*
