@@ -1,3 +1,7 @@
+---
+---
+
+
 /* Global */
 
 body {
@@ -114,7 +118,7 @@ div.right {
 }
 
 .profile-pic {
-	background-image: url({{'/img/{{ page.first_name }}{{ page.last_name }}.jpg'}});
+	background-image: url('{{ page.first_name }}{{ page.last_name }}.jpg');
 	float: right;
 	max-width: 206px;
 	max-height: 177px;
@@ -148,13 +152,14 @@ div.right {
 #interests li {
 	padding-left: 1em;
 	text-indent: -1em;
+	vertical-align: text-bottom;
 	/*vertical-align: middle;*/
 }
 
 #interests li:before {
 	content: "+";
 	padding-right: 5px;
-	vertical-align: middle;
+	vertical-align: baseline;
 	display: inline;
 	padding-top: 0;
 	margin-bottom: .5em;
