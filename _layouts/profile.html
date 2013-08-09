@@ -20,15 +20,19 @@
 		{% capture full_name %} 
 		{{ page.first_name }} {{ page.last_name }}
 		{% endcapture %}
-		<div class="header">
+		<div class="header col-7">
 			<a class="smaller" href="/">
 				<img class="logo smaller" src="/img/flatiron-school.png">
 			</a>
 		</div>
-		<br>
-		<br>
-		<br>
 
+		<div class="person col-5">
+			<h2 class="name">{{ page.first_name }} <span class="last_name">{{ page.last_name | upcase }}</span> </h2>
+			<p class="profile">Profile</p>
+			<div class="id box">{{ page.profile_num }} </div>
+			<div class="profile-pic"></div> <!-- /img/student/{{ page.first_name }}{{ page.last_name }}.jpg -->
+		</div>
+	
 		<div class="info col-7">
 			<div class="field bold left">Email</div>
 			<div class="right">{{ page.email }} </div>
@@ -47,12 +51,6 @@
 			{% for post in page.blog %}
 			<div class="left"> {{ post }} </div>
 			{% endfor %}
-		</div>
-		<div class="person col-5">
-			<h2 class="name">{{ page.first_name }} <b>{{ page.last_name | upcase }}</b> </h2>
-			<p class="profile">Profile</p>
-			<div class="id box">{{ page.profile_num }} </div>
-			<div class="profile-pic"></div> <!-- /img/student/{{ page.first_name }}{{ page.last_name }}.jpg -->
 		</div>
 		<div class="bio col-7">
 			<h5 class="heading bold	box">Bio</h5>

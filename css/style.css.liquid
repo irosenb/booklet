@@ -55,7 +55,7 @@ tr {
 }
 
 .smaller {
-	width: 30%;
+	width: 125px;
 	/*float: left;*/
 	margin-top: 40px;	 
 }
@@ -78,7 +78,6 @@ tr {
 .person * {
 	text-align: right;
 }
-
 
 .presentation {
 	/*float: right; */
@@ -103,6 +102,7 @@ tr {
 	background-color: red;
 	color: white;
 	padding: 5px;
+	font-weight: lighter;
 
 }
 
@@ -120,7 +120,8 @@ div.right {
 }
 
 .profile-pic {
-	background-image: url('{{ page.first_name }}{{ page.last_name }}.jpg');
+	background-image: url('/img/{{ page.first_name }}{{ page.last_name }}.jpg');
+
 	float: right;
 	max-width: 206px;
 	max-height: 177px;
