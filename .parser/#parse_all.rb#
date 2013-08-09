@@ -112,6 +112,7 @@ def parse_all(type)
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
 
+          
 
           # item.capitalize ???
           item = "\"#{item}\""
