@@ -103,27 +103,34 @@ def parse_all(type)
             item = "#{first_name}#{last_name}.#{ext}"
           end
 
+          # TODO: Fix code for items 17 and 18 so that the quotes more
+          # elegantly are wrapped around the array elements.
 
         elsif count == 17
+          item = "\n- \"#{item}"
           if item =~ /,/
-            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\"\n- \"\\2" )
           end
           if item =~ /\\r\\n/
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
-
-          # item.capitalize ???
-          item = "\"#{item}\""
+          item = item.gsub(/^\W*(\w)/){ |m| 
+                           m.sub($1, $1.upcase) }
+          item = "#{item}\""
 
         elsif count == 18
-          item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\n- \\3" )
+          item = "\n- \"#{item}"
+          item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
+          item = "#{item}\""
+
+        elsif count == 21
           item = "\"#{item}\""
 
         end
 
         if count < 22
           txt << "#{Rows[count]}: #{item}\n"
-#          puts txt
+          #          puts txt
         end
       end
 
