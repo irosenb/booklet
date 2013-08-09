@@ -103,6 +103,8 @@ def parse_all(type)
             item = "#{first_name}#{last_name}.#{ext}"
           end
 
+          # TODO: Fix code for items 17 and 18 so that the quotes more
+          # elegantly are wrapped around the array elements.
 
         elsif count == 17
           item = "\n- \"#{item}"
