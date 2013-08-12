@@ -16,9 +16,6 @@ end
 
 def parse_all(type)
 
-  # move_md = `mv ../_posts/*.md bak/`
-  # move_img = `mv ../img/* bak/`
-
   count = 0
   id = 1
 
@@ -34,9 +31,12 @@ def parse_all(type)
     when "txt"
       count_dl = -1
       txt = "---\n"
-    when "markdown"
+    when "markdown_p"
       count_dl = -1
       txt = "---\nlayout: post\n"
+    when "markdown_r"
+      count_dl = -1
+      txt = "---\nlayout: resume\n"
     else
       print "\nInvalid type given to parse_all method.\n"
       return nil
@@ -80,7 +80,7 @@ def parse_all(type)
         end
       end
 
-      if (type == "txt" or type == "markdown")
+      if (type == "txt" or type.include?("markdown"))
         if count == 6 and "#{item}".include?("(")
 
           url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
@@ -148,13 +148,21 @@ def parse_all(type)
     count = 0
     id += 1
 
-    if (type == "txt" or type == "markdown")
+    if (type == "txt" or type.include?("markdown"))
       txt << "---"
+      md_name = ""
 
       if type == "txt"
         student = File.open("txt/#{first_name}#{last_name}.txt", "w")
-      elsif type == "markdown"
-        student = File.open("markdown/#{Date.today}-#{first_name}#{last_name}.md", "w")
+
+      elsif type == "markdown_p"
+        md_name = "#{Date.today}-#{first_name}#{last_name}_profile.md"
+        student = File.open("markdown/#{md_name}", "w")
+
+      elsif type == "markdown_r"
+        md_name = "#{Date.today}-#{first_name}#{last_name}_resume.md"
+        student = File.open("markdown/#{md_name}", "w")
+
       end
 
       count = 0
@@ -163,16 +171,10 @@ def parse_all(type)
       student << txt
       student.close
 
-      if type == "markdown"
-        FileUtils.cp("markdown/#{Date.today}-#{first_name}#{last_name}.md",
-                     "../_posts/#{Date.today}-#{first_name}#{last_name}.md")
+      if type.include?("markdown")
+        FileUtils.cp("markdown/#{md_name}",
+                     "../_posts/#{md_name}")
       end
     end
   end
-
-  # if (type == "img" or type == "resume")
-  #   dl_file << txt
-  #   dl_file.close
-  # end
-
 end

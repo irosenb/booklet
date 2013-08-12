@@ -10,10 +10,6 @@ require 'fileutils'
 
 require_relative 'parse_all'
 require_relative 'scrape'
-# require_relative 'markdown/parse_md'
-# require_relative 'txt/parse_txt'
-# require_relative 'img/parse_img'
-# require_relative 'resume/parse_resume'
 
 # Ideally get rid of this first "nil" field...
 Rows = ["nil",
@@ -35,8 +31,11 @@ def download(url, n, first, last, dir)
 end
 
 def parser
-  print "Creating markdown files... "
-  parse_all("markdown")
+  print "Creating markdown files for profiles... "
+  parse_all("markdown_p")
+
+  print "Done.\nCreating markdown files for resumes... "
+  parse_all("markdown_r")
 
   print "Done.\nCreating text files... "
   parse_all("txt")
