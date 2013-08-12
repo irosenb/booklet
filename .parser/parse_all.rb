@@ -45,6 +45,7 @@ def parse_all(type)
     first_name = ""
     last_name = ""
 
+    FileUtils.touch(file_path) if (type == "img" or type == "resume")
     dl_file = File.open(file_path, "w") if (type == "img" or type == "resume")
 
     line.split("\t").each do |item|
