@@ -86,9 +86,7 @@ tr {
 	text-transform: uppercase;
 }
 
-
-
-.profile { text-transform: uppercase; }
+.profile, .resume { text-transform: uppercase; }
 
 .person * {
 	text-align: right;
@@ -120,8 +118,12 @@ tr {
 	margin-top: 2.5em;
 }
 
-.bio {
+.bio, .tech {
 	float: left;
+}
+
+.tech {
+    clear: right;
 }
 
 .presentation .post {
@@ -185,21 +187,21 @@ div.right {
 	margin-right: 5px;
 	}*/
 
-#interests {
+#interests, #edu {
 	list-style: none;
 	display: table-cell;
 	padding: 0;
 	margin: 0;
 }
 
-#interests li {
+#interests li, #edu li {
 	padding-left: 1em;
 	text-indent: -1em;
 	vertical-align: text-bottom;
 	/*vertical-align: middle;*/
 }
 
-#interests li:before {
+#interests li:before, #edu li:before {
 	content: "+";
 	padding-right: 5px;
 	vertical-align: baseline;
@@ -209,14 +211,13 @@ div.right {
 
 }
 
-
 .presentation:before  {
 	content: "+";
 }
 
 .visible-print  { display: inherit !important; }
 
-.notes {/*
+.notes, .employ {/*
 	height: 500px;
 	width: 500px;*/
 	position: absolute;
@@ -224,7 +225,7 @@ div.right {
 	left: 0;
 }
 
-.notes h5 {
+.notes h5, .employ h5 {
 	position: relative;
 }
 
