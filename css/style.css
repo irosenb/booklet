@@ -7,6 +7,8 @@ body {
 	/*size: 8.5in 11in;*/
 	width: 100%;
 	height: 100%;
+	line-height: 1.35em;
+	
 }
 
 table { 
@@ -23,8 +25,10 @@ tr {
 }
 
 .contain {
-	margin-left: 50px;
+	margin: 0px 20px;
 }
+
+
 
 .home {
 	text-align: center !important;
@@ -43,8 +47,18 @@ tr {
 	text-align: center;
 }
 
-.info .person {
+.header a {
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+}
+
+.info, .person {
 	vertical-align: middle;
+}
+
+.info {
+	margin: 5em 0em;
 }
 
 .smaller {
@@ -82,6 +96,15 @@ tr {
 	margin-top: 0;
 }
 
+.person h2 {
+	font-family: 'Lucida Grande';
+	letter-spacing: -.1em;
+}
+
+.person .id {
+	text-align: center;
+}
+
 .presentation {
 	/*float: right; */
 	position: absolute;
@@ -91,6 +114,7 @@ tr {
 
 .person {
 	float: right;
+	margin-top: 2.5em;
 }
 
 .bio {
@@ -128,18 +152,18 @@ div.right {
 	float: right;
 }
 
-.last_name {
-
-}
-
 .profile-pic {
 	margin-top: 6px;
 	clear: right;
 	float: right;
-	max-width: 206px;
-	max-height: 177px;
+	
 	/*max-width: 100%;*/
 	/*max-height: 50%;*/
+}
+
+.profile-pic img {
+	max-width: 206px;
+	max-height: 177px;
 }
 
 .twitter:before {
@@ -189,14 +213,37 @@ div.right {
 
 .visible-print  { display: inherit !important; }
 
+.notes {
+	margin-top: 5em;
+}
+
+.notes hr {
+	background-color: #000;
+
+}
+
 
 /* Trying to print on one page. Not working. */
 
 @media print {
-	body {
+	/*body {
 		width: 100%;
 		height: 100%;
+		-webkit-print-color-adjust:exact;
 	}
+*/
+	.box {
+		/*border: 4px solid #000;*/
+		background-color: black !important;
+		color: white !important;
+		padding: 5px;
+	}
+
+	.notes hr {
+		background-color: #000 !important;
+		
+	}
+
 }
 
 @page {
