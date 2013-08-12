@@ -5,16 +5,11 @@
 if [[ "$(pwd)" == *.parser ]]; then
     shopt -s extglob
 
-    for dir in img txt markdown resume; do
+    for dir in img txt markdown resume ../posts; do
 	if [ ! -d "$dir" ]; then
 	    mkdir $dir
 	fi	
     done
-
-    # How to also include ../posts dir in the dir group above?
-    if [ ! -d "../_posts" ]; then
-	mkdir ../posts
-    fi
 
     rm img/* #.jpg, .png
     rm txt/* #.txt
