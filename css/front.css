@@ -1,0 +1,48 @@
+body {
+/*	background-color: #222;
+*/	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;    
+	/*text-align: center;*/
+}
+
+#home {
+	text-align: center;
+}
+
+.students {
+	overflow: hidden;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.id {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	/*clear: both;*/
+}
+
+.student {
+	position: relative;
+	float: left;
+	width: 33.33%;
+	height: 33.33%;
+	margin: 0px auto 10px;
+	/*clear: both;*/
+}
+
+#wrap {
+	width: 50%;
+	height: inherit;
+	margin: 0 auto;
+}
+
+.student a {
+	display: block;
+}
