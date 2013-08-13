@@ -12,6 +12,10 @@ body {
 	text-align: center;
 }
 
+.title, .hashtag {
+    font-family: 'Lucida Grande';
+}
+
 .students {
 	overflow: hidden;
 	height: 100%;
@@ -28,6 +32,7 @@ body {
 	margin: 10px 0;
 	text-align: center;	
 	display: inline;
+	font-family: 'Lucida Grande';
 	/*line-height: 14px;*/
 }
 
@@ -49,6 +54,7 @@ body {
 	float: none;
 	vertical-align: middle;
 	padding: 1px;
+/*	font-family: 'Lucida Grande';*/
 }
 
 
