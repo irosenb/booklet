@@ -225,7 +225,8 @@ table {
     text-decoration: underline;
   }
   a[href]:after {
-    content: " (" attr(href) ")";
+  /*    content: " (" attr(href) ")"; */
+  /* Commented this out so printing doesn't result in href showing. */
   }
   abbr[title]:after {
     content: " (" attr(title) ")";
