@@ -1,17 +1,22 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Class of Summer 2013
+css: front.css
 ---
 
 <div id="home">
-  <h1>Students</h1>
-  <ul class="posts">
+  <h1>Class of Summer 2013</h1>
+
+  <div class="students">
     {% for post in site.posts %}
-      <li>
-      	<a href="{{ post.url }}">
-      		{{ post.first_name }} {{ post.last_name }} 
-      	</a>
-      </li>
+    <div class="student"> 
+      <a href="{{ post.url }}">
+        {{ post.first_name }} {{ post.last_name }} 
+      </a>
+      <span class="box id">
+        {{ forloop.index }}
+      </span>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
