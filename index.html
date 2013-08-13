@@ -13,12 +13,18 @@ css: front.css
     {% for post in site.posts reversed %}
     {% if post.layout == 'post' %}
     <div class="student"> 
+
       <a href="{{ post.url }}">
-        {{ post.first_name }} <span class="bold">{{ post.last_name }}</span>
+        {{ post.first_name }}
+	<span class="bold">{{ post.last_name }}</span>
       </a>
-      <span class="box id">
-        {{ forloop.index }}
-      </span>
+
+      <a href="{{ post.url }}">
+	<span class="box id">
+          {{ forloop.index }}
+	</span>
+      </a>
+
     </div>
     {% endif %}
     {% endfor %}

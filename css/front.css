@@ -29,7 +29,7 @@ body {
 	float: left;
 	width: 25%;
 	height: 25%;
-	margin: 10px 0;
+	margin: 8px 0;
 	text-align: center;	
 	display: inline;
 	font-family: 'Lucida Grande';
@@ -49,6 +49,7 @@ body {
 	width: 26px;
 	height: 26px;
 	display: inline-block;
+	margin-top: 2px;
 	line-height: 26px;
 	clear: both;
 	float: none;

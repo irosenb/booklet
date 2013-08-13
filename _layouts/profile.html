@@ -39,19 +39,19 @@
 
 		<div class="info col-7">
 			<div class="field bold left">Email</div>
-			<div class="right">{{ page.email }} </div>
+			<div class="right uline">{{ page.email }} </div>
 			<div class="field bold left">Phone</div>
 			<div class="right">{{ page.phone }} </div>
 			<div class="field bold left">Github</div>
-			<div class="right">{{ page.github }} </div>
+			<div class="right uline">{{ page.github }} </div>
 			<div class="field bold left">Twitter</div>
-			<div class="right twitter">{{ page.twitter }} </div>
+			<div class="right twitter uline">{{ page.twitter }} </div>
 			<div class="field bold left">Meetup Presentation</div>
 			{% for item in page.presentation %}
 			<div class="left presentation">{{ item }} </div> <!-- presentations? -->
 			{% endfor %}
 			<div class="field bold left">Blog</div> 
-			<div class="right">{{ page.blog }} </div> 	<!-- Blog posts? -->
+			<div class="right uline">{{ page.blog }} </div> 	<!-- Blog posts? -->
 			{% for post in page.blog %}
 			<div class="left"> {{ post }} </div>
 			{% endfor %}
