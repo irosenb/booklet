@@ -8,9 +8,9 @@ css: front.css
   <h1>Class of Summer 2013</h1>
 
   <div class="students">
-    {% for post in site.posts %}
+    {% for post in site.posts reversed %}
     {% if post.layout == 'post' %}
-    <div class="student">
+    <div class="student"> 
       <a href="{{ post.url }}">
         {{ post.first_name }} {{ post.last_name }} 
       </a>
