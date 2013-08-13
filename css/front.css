@@ -19,6 +19,18 @@ body {
 	margin: 0 auto;
 }
 
+.student {
+	/*position: relative;*/
+	/*display: block;*/
+	float: left;
+	width: 25%;
+	height: 25%;
+	margin: 10px 0;
+	text-align: center;	
+	display: inline;
+	/*line-height: 14px;*/
+}
+
 .student a {
 	display: block;
 	/*position: relative;*/
@@ -26,33 +38,17 @@ body {
 	/*float: left;*/
 }
 
-.student span {
+.student .id {
 	margin-top: 1em;
-	padding: 1em;
-
-}
-
-.id {
-	/*position: absolute;*/
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: inline;
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	line-height: 26px;
 	clear: both;
 	float: none;
+	vertical-align: middle;
 }
 
-.student {
-	/*position: relative;*/
-	/*display: block;*/
-	float: left;
-	width: 33.33%;
-	height: 33.33%;
-	margin: 10px 0;
-	text-align: center;	
-	display: inline;
-}
 
 #wrap {
 	width: 50%;
