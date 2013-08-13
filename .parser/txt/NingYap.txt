@@ -17,8 +17,7 @@ codeschool: http://www.codeschool.com/users/ningbit
 picture: NingYap.jpg
 interests: 
 - "Playing Cello"
-- "Snowboarding"
-/Skateboarding
+- "Snowboarding/Skateboarding"
 - "CitiBiking"
 - "Bouldering"
 - "Traveling"

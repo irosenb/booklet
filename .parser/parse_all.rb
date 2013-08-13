@@ -107,20 +107,37 @@ def parse_all(type)
           # TODO: Fix code for items 17 and 18 so that the quotes more
           # elegantly are wrapped around the array elements.
 
+          # TODO: If there are newlines in the interests, parse by newlines.
+          # If there are only commas, parse by commas.
+
+          # TODO: Make Wufoo able to feed interests via separate fields...
+          # people fill them out / separate their interests too arbitrarily.
+
         elsif count == 17
+
           item = "\n- #{item}"
-          if item =~ /,/
-            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-          end
+
           if item =~ /\\r\\n/
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
+
+          # if item =~ /\"/
+          #   item = item.gsub( /(\")+/, "\"" )
+          # end
+
+          if item =~ /,/
+            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+          end
+
           # Capitalize
           item = item.gsub(/^\W*(\w)/){ |m| 
                            m.sub($1, $1.upcase) }
 
           # Wrap each line in quotes
-          item = item.gsub(/(- )+([\w. -]+)[\n|$]*/, "- \"\\2\"\n")
+          # NOTE: This could lead to problems if people do not input
+          # characters of type [\w. \/-]
+          item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
+                           "- \"\\2\"\n")
 
           # Can we combine the above regex into a single, more elegant
           # capture and substitution?

@@ -19,8 +19,7 @@ interests:
 - "Exploration"
 - "Both foreign and domestic "
 - "Devouring books"
-- "Puzzles n"
-' games n' code
+- "Puzzles n' games n' code"
 - "Learning new languages"
 - "Live music"
 

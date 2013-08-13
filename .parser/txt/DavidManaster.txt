@@ -18,9 +18,10 @@ picture: DavidManaster.JPG
 interests: 
 - "My dog"
 - "Cirri"
-Traveling
-Skiing
-Hiking
+- "Traveling"
+- "Skiing"
+- "Hiking"
+
 bio: 
 - "A NYC native, David graduated from Binghamton University with a degree in economics, but soon caught the entrepreneurial bug."
 - "After a short stint at Monster, he founded ERE Media. The company grew to become the leading independent publisher and conference organizer for the recruiting profession before David passed the baton to a new CEO in September 2012."
