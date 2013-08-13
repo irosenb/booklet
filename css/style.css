@@ -88,6 +88,12 @@ tr {
 
 .profile, .resume { text-transform: uppercase; }
 
+/* .profile, .resume a { */
+/* 	font-size: 0; */
+/* 	line-height: 0; */
+/* 	color: transparent; */
+/* } */
+
 .person * {
 	text-align: right;
 	margin-bottom: 0;
@@ -171,6 +177,20 @@ div.right {
 	max-height: 177px;
 }
 
+.profile-pic-fake {
+	/* margin-top: 6px; */
+	/* clear: right; */
+	/* float: right; */
+	
+	/*max-width: 100%;*/
+	/*max-height: 50%;*/
+}
+
+.profile-pic-fake img {
+	/* max-width: 206px; */
+	/* max-height: 177px; */
+}
+
 .twitter:before {
 	content: "@";
 }
@@ -217,12 +237,18 @@ div.right {
 
 .visible-print  { display: inherit !important; }
 
-.notes, .employ {/*
+.notes {/*
 	height: 500px;
 	width: 500px;*/
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
+
+.employ {
+    position: absolute;
+    bottom: 290;
+    left: 0;
 }
 
 .notes h5, .employ h5 {
@@ -264,4 +290,13 @@ div.right {
 
 @page {
 	size: 8.5in 11in;
+}
+
+a:link {
+    /*    text-decoration:none;*/
+    color: rgb(51, 51, 51);
+}
+a:visited {
+    /*    text-decoration:none;*/
+    color: rgb(51, 51, 51);
 }
