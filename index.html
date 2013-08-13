@@ -9,18 +9,14 @@ css: front.css
 
   <div class="students">
     {% for post in site.posts %}
-    {% if post.first_name != "" and post.last_name != "" %}
     <div class="student"> 
-      <div id="wrap">
-        <a href="{{ post.url }}">
-          {{ post.first_name }} {{ post.last_name }} 
-        </a>
-        <div class="box id">
-          {{ forloop.index }}
-        </div>
-      </div>
+      <a href="{{ post.url }}">
+        {{ post.first_name }} {{ post.last_name }} 
+      </a>
+      <span class="box id">
+        {{ forloop.index }}
+      </span>
     </div>
-    {% endif %}
     {% endfor %}
   </div>
 </div>
