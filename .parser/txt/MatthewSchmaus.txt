@@ -17,8 +17,7 @@ codeschool: www.codeschool.com/users/mschmaus201
 picture: MatthewSchmaus.png
 interests: 
 - "My dogs"
-- "Car and technology "
-(consumer/hardware tech and web-tech) industries
+- "Car and technology (consumer/hardware tech and web-tech) industries"
 - "Learning anything new"
 - "Food"
 - "Snow and water skiing"

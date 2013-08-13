@@ -22,16 +22,15 @@ interests:
 - "Urban living"
 - "Maps"
 - "And geolocation"
-- "The digitization of media industries and "
-\"the evolving media landscape\"
+- "The digitization of media industries and \"the evolving media landscape\""
 - "Human computer interaction and internet psychology "
---------
-These last three can totally come off:
-Music
+- "--------"
+- "These last three can totally come off:"
+- "Music"
 - "Film"
 - "And the arts"
-Public radio
-Cycling
+- "Public radio"
+- "Cycling"
 
 bio: 
 - "Sarah was brought to coding by both her prior work in media and a lifelong fascination with technology and its ever-increasing impact on our lives. Though always buoyed by a great passion for the arts, Sarah eventually reached a point where her mere proximity to creativity as a sales analyst was no longer enough. This, coupled with the sneaking suspicion that there was in fact a better way to complete the repetitive aspects of her work in ebooks and ecommerce caused her to dig deeper into the world of macros, automation, and later code."

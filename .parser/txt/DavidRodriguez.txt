@@ -17,12 +17,12 @@ codeschool: http://www.codeschool.com/users/DRod
 picture: DavidRodriguez.jpg
 interests: 
 - "Learning"
-Technology
-Science
-Photography
-Aviation
-Volunteering
-The great outdoors
+- "Technology"
+- "Science"
+- "Photography"
+- "Aviation"
+- "Volunteering"
+- "The great outdoors"
 
 bio: 
 - "Nothing makes David happier than collaborating side-by-side with bright, creative people building very cool things while learning as much as he can in the process."

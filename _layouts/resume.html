@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{ page.student }} -- Resume</title>
+	<meta name="viewport" content="width=device-width">
+
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" media="screen, print" 	  href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="contain">
+		{% capture full_name %} 
+		{{ page.first_name }} {{ page.last_name }}
+		{% endcapture %}
+		<div class="header col-7">
+			<a class="smaller" href="/">
+				<img class="logo smaller" src="/img/flatiron-school.png">
+			</a>
+		</div>
+
+		<div class="person col-5">
+			<h2 class="name">{{ page.first_name }} <span class="bold">{{ page.last_name }}</span> </h2>
+			<p class="resume">
+			  <a href="/{{ page.first_name }}{{ page.last_name }}_profile">Resume</a>
+			</p>
+			<div class="id box">{{ page.profile_num }} 	</div>
+		</div>
+
+
+		<div class="tech col-7">
+			<h5 class="heading bold	box">Technical Experience</h5>
+			{% for part in page.bio %}
+			<p>{{ part }} </p>
+			{% endfor %}
+		</div>
+		<div class="edu col-5">
+			<h5 class="heading bold box">Education</h5>	
+			<ul id="edu">
+				{% for point in page.interests %}
+				<li>{{ point }} </li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="employ col-12">
+			<h5 class="notes heading bold box">Employment History</h5>
+			<hr class="hr2"/>
+			<hr class="hr1"></hr>
+			<hr class="hr1"></hr>
+			<hr class="hr1"></hr>
+			<hr class="hr1"></hr>
+			<hr class="hr1"></hr>
+		</div>
+	</div>
+</body>
+</html>

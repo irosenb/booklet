@@ -19,8 +19,7 @@ interests:
 - "Distilling spirits"
 - "Volunteering"
 - "Climbing and mountaineering"
-- "Literature "
-& philosophy
+- "Literature & philosophy"
 - "3d printing"
 - "Sculpture"
 - "Getting lost in foreign countries"

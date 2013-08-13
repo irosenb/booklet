@@ -16,7 +16,8 @@ teamtreehouse:
 codeschool: 
 picture: 
 interests: 
-- 
+- "- "
+
 bio: 
 - ""
 looking: 

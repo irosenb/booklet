@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{{ page.student }}</title>
+	<title>{{ page.student }} -- Profile</title>
 	<meta name="viewport" content="width=device-width">
 
 	<!-- syntax highlighting CSS -->
@@ -28,7 +28,9 @@
 
 		<div class="person col-5">
 			<h2 class="name">{{ page.first_name }} <span class="bold">{{ page.last_name }}</span> </h2>
-			<p class="profile">Profile</p>
+			<p class="profile">
+			  <a href="/{{ page.first_name }}{{ page.last_name }}_resume">Profile</a>
+			</p>
 			<div class="id box">{{ page.profile_num }} 	</div>
 			<div class="profile-pic">
 				<img src="/img/student/{{ page.first_name }}{{ page.last_name }}.jpg" class="profile-pic">
