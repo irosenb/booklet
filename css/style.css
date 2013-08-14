@@ -229,21 +229,21 @@ div.right {
     font-weight: bold;
 }
 
-#interests, #edu, #tech {
+#interests, #edu, #tech, #job_duty {
 	list-style: none;
 	display: table-cell;
 	padding: 0;
 	margin: 0;
 }
 
-#interests li, #edu li, #tech li {
+#interests li, #edu li, #tech li, #job_duty li {
 	padding-left: 1em;
 	text-indent: -1em;
 	vertical-align: text-bottom;
 	/*vertical-align: middle;*/
 }
 
-#interests li:before, #edu li:before, #tech li:before {
+#interests li:before, #edu li:before, #tech li:before, #job_duty li:before {
 	content: "+";
 	padding-right: 5px;
 	vertical-align: baseline;
@@ -280,6 +280,15 @@ div.right {
 .notes hr {
 	background-color: #000;
 
+}
+
+.job .position {
+	margin-top: 1em;
+	font-weight: bold;
+}
+
+.job .dates {
+	margin-bottom: 1em;
 }
 
 /* Trying to print on one page. Not working. */

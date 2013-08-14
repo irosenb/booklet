@@ -22,46 +22,63 @@
 		{% endcapture %}
 		<div class="header col-7">
 			<a class="smaller" href="/">
-				<img class="logo smaller" src="/img/flatiron-school.png">
-			</a>
+				<img class="logo smaller" src="/img/flatiron-school.png"></a>
 		</div>
 
 		<div class="person col-5">
-			<h2 class="name">{{ page.first_name }} <span class="bold">{{ page.last_name }}</span> </h2>
+			<h2 class="name">
+				{{ page.first_name }}
+				<span class="bold">{{ page.last_name }}</span>
+			</h2>
 			<p class="resume">
-			  <a href="/{{ page.first_name }}{{ page.last_name }}_profile">Resume</a>
+				<a href="/{{ page.first_name }}{{ page.last_name }}_profile">Resume</a>
 			</p>
-			<div class="id box">{{ page.profile_num }} 	</div>
+			<div class="id box">{{ page.profile_num }}</div>
 		</div>
-
 
 		<div class="tech col-7">
 			<h5 class="heading bold	box">Technical Experience</h5>
 			{% for project in page.technical_experience %}
-			<span class="project bold">{{ project.name }}</span> - 
-			<span class="project_desc">{{ project.description }}</span><ul id="tech">
-			{% for note in project.notes %}
-			<li>{{ note }}</li>
-			{% endfor %}
+			<span class="project bold">{{ project.name }}</span>
+			-
+			<span class="project_desc">{{ project.description }}</span>
+			<ul id="tech">
+				{% for note in project.notes %}
+				<li>{{ note }}</li>
+				{% endfor %}
 			</ul>
 			<br/>
 			{% endfor %}
 		</div>
 		<div class="edu col-5">
-			<h5 class="heading bold box">Education</h5>	
-
-				{% for school in page.education %}
-				<span class="school">{{ school.name }}</span>,
-				<span class="school_date">{{ school.date }}</span>			<ul id="edu">
+			<h5 class="heading bold box">Education</h5>
+			{% for school in page.education %}
+			<span class="school">{{ school.name }}</span>
+			,
+			<span class="school_date">{{ school.date }}</span>
+			<ul id="edu">
 				{% for note in school.notes %}
 				<li>{{ note }}</li>
 				{% endfor %}
-				</ul>
-				<br/>
-				{% endfor %}
+			</ul>
+			<br/>
+			{% endfor %}
 		</div>
 		<div class="employ col-12">
 			<h5 class="notes heading bold box">Employment History</h5>
+			{% for job in page.employment_history %}
+			<div class="job col-3">
+				<div class="company bold">{{ job.company }}</div>
+				<div class="location">{{ job.location }}</div>
+				<div class="position">{{ job.position }}</div>
+				<div class="dates">{{ job.dates }}</div>
+				<ul id ="edu" >
+					{% for duty in job.duties %}
+					<li>{{ duty }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endfor %}
 		</div>
 	</div>
 </body>
