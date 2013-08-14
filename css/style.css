@@ -77,7 +77,8 @@ tr {
 
 .medium {
     width: 360px;
-    margin-top: 40px;
+    margin-top: 15px;
+    margin-left: 5px;
     float: left;
 }
 
@@ -177,7 +178,8 @@ div.right {
 
 .fair_info {
     float: right;
-    margin-top: 900px;
+    margin-top: 875px; /* How to get it to stick to the bottom? */
+    margin-right: 50px;
 }
 
 .description.class {
