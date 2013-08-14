@@ -21,7 +21,9 @@ css: front.css
 
       <a href="{{ post.url }}">
 	<span class="box id">
-          {{ forloop.index }}
+          {{ forloop.index | plus:1 | divided_by:2 }}
+	  <!-- Temporary fix. Ideally, get each number to match each
+	       student's ID. -->
 	</span>
       </a>
 

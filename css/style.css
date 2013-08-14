@@ -75,6 +75,12 @@ tr {
 	margin-top: 40px;	 
 }
 
+.medium {
+    width: 360px;
+    margin-top: 40px;
+    float: left;
+}
+
 .field {
 	
 	padding-right: 0.5em;
@@ -156,6 +162,26 @@ div.right {
 
 .field:after {
 	content: ":";
+}
+
+.description {
+    font-family: 'Lucida Grande';
+    letter-spacing: -.1em;
+    font-weight: lighter;
+    text-align: right;
+}
+
+.fair_cover {
+    font-size: 48px;
+}
+
+.fair_info {
+    float: right;
+    margin-top: 900px;
+}
+
+.description.class {
+    font-weight: bold;
 }
 
 .id {
@@ -260,7 +286,6 @@ div.right {
 	background-color: #000;
 
 }
-
 
 /* Trying to print on one page. Not working. */
 

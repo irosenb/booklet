@@ -1,0 +1,79 @@
+---
+layout: cover
+title: The Flatiron School's Science Fair
+css: front.css
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"> -->
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/{{ page.css }} ">
+
+    </head>
+    <body>
+
+            <div class="header">
+              <!-- <h1 class="title"><a href="/">{{ site.name }}</a></h1> -->
+<!--               <img class="logo" src="/img/flatiron-school.png" --> <!-- width="30%"> -->
+
+		<div class="header col-7">
+<!--			<a class="smaller" href="/">-->
+				<img class="logo medium" src="/img/flatiron-school.png">
+<!--			</a>-->
+		</div>
+
+
+
+              <!-- <a class="extra" href="/">home</a> -->
+            </div>
+<div class="fair_info">
+<h1 class="hashtag fair_cover">#ScienceFAIR</h1>
+<h3 class="description class">Summer 2013</h3>
+<h3 class="description">August 15, 2013</h3>
+<h3 class="description">33 West 26th St, 2nd FL</h3>
+<h3 class="description">New York, NY 10010</h3>
+</div>
+    </body>
+</html>
+
+
+<!-- <div id="home"> -->
+<!--   <h1 class="bold title"> -->
+<!--     Class of Summer 2013 -->
+<!--   </h1> -->
+
+<!--   <div class="students"> -->
+<!--     {% for post in site.posts reversed %} -->
+<!--     {% if post.layout == 'post' %} -->
+<!--     <div class="student">  -->
+
+<!--       <a href="{{ post.url }}"> -->
+<!--         {{ post.first_name }} -->
+<!-- 	<span class="bold">{{ post.last_name }}</span> -->
+<!--       </a> -->
+
+<!--       <a href="{{ post.url }}"> -->
+<!-- 	<span class="box id"> -->
+<!--           {{ forloop.index | plus:1 | divided_by:2 }} -->
+<!-- 	  <\!-- Temporary fix. Ideally, get each number to match each -->
+<!-- 	       student's ID. -\-> -->
+<!-- 	</span> -->
+<!--       </a> -->
+
+<!--     </div> -->
+<!--     {% endif %} -->
+<!--     {% endfor %} -->
+<!--   </div> -->
+<!-- </div> -->
