@@ -11,7 +11,7 @@ require 'fileutils'
 require_relative 'parse_all'
 require_relative 'scrape'
 
-# Ideally get rid of this first "nil" field...
+# Ideally, get rid of nil field...
 Rows = ["nil",
         "profile_num", "first_name", "last_name", "phone", "email", "resume",
         "linkedin", "blog", "twitter", "github", "stackoverflow", 
@@ -31,22 +31,32 @@ def download(url, n, first, last, dir)
 end
 
 def parser
-  print "Creating markdown files for profiles... "
-  parse_all("markdown_p")
+  
+  if ARGV.length == 0
 
-  print "Done.\nCreating markdown files for resumes... "
-  parse_all("markdown_r")
+    print "Creating markdown files for profiles... "
+    parse_all("markdown_p")
 
-  print "Done.\nCreating text files... "
-  parse_all("txt")
+    print "Done.\nCreating markdown files for resumes... "
+    parse_all("markdown_r")
 
-  print "Done.\nDownloading image files... "
-  parse_all("img")
+    print "Done.\nCreating text files... "
+    parse_all("txt")
 
-  print "Done.\nDownloading resume files... "
-  parse_all("resume")
+    print "Done.\nDownloading image files... "
+    parse_all("img")
 
-  print "\nCompleted parsing and downloading.\n"
+    print "Done.\nDownloading resume files... "
+    parse_all("resume")
+
+    print "\nCompleted parsing and downloading.\n"
+
+  elsif ARGV.length > 0
+    
+    # ...
+
+  end
+
 end
 
 scraper
