@@ -17,6 +17,14 @@ body {
 	margin-bottom: 15em;
 }
 
+.header.cover {
+    width: 360px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    float: left;
+}
+
 .clearfix:after {
 	content: ".";
 	display: block;
