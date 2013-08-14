@@ -62,6 +62,16 @@
 		</div>
 		<div class="employ col-12">
 			<h5 class="notes heading bold box">Employment History</h5>
+			{% for job in page.employment_history %}
+			<span class="company"> {{ job.company }} </span>
+			<span class="job_loc"> {{ job.location }} </span>
+			<span class="job_pos"> {{ job.position }} </span>
+			<span class="job_dates"> {{ job.dates }} </span>			<ul id ="job_duty">
+			{% for duty in job.duties %}
+			  <li> {{ duty }} </li>
+			{% endfor %}
+			</ul>
+			{% endfor %}
 
 		</div>
 	</div>
