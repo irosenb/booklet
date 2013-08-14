@@ -5,9 +5,7 @@ css: front.css
 ---
 
 <div id="home">
-  <h1 class="bold title">
-    Class of Summer 2013
-  </h1>
+  <h1>Class of Summer 2013</h1>
 
   <div class="students">
     {% for post in site.posts reversed %}
@@ -26,7 +24,6 @@ css: front.css
 	       student's ID. -->
 	</span>
       </a>
-
     </div>
     {% endif %}
     {% endfor %}
