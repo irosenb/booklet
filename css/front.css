@@ -37,10 +37,6 @@ body {
 	line-height: 0;
 }
 
-.semester {
-    font-size: 22px;
-}
-
 .header img {
 	display: inline-block;
 	float: left;
@@ -68,7 +64,7 @@ body {
 .students {
 	overflow: hidden;
 	height: 100%;
-	width: 75%;
+	width: 77%;
 	margin: 0 auto;
 }
 
@@ -91,6 +87,11 @@ body {
 	/*position: relative;*/
 	/*text-align: center;*/
 	/*float: left;*/
+}
+
+.semester {
+    font-size: 22px;
+    text-decoration: none;
 }
 
 .student .id {
