@@ -19,7 +19,7 @@ body {
 .students {
 	overflow: hidden;
 	height: 100%;
-	/*width: 50%;*/
+	width: 75%;
 	margin: 0 auto;
 }
 
