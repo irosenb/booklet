@@ -49,25 +49,20 @@
 		</div>
 		<div class="edu col-5">
 			<h5 class="heading bold box">Education</h5>	
-			<ul id="edu">
+
 				{% for school in page.education %}
 				<span class="school">{{ school.name }}</span>,
-				<span class="school_date">{{ school.date }}</span>
+				<span class="school_date">{{ school.date }}</span>			<ul id="edu">
 				{% for note in school.notes %}
 				<li>{{ note }}</li>
 				{% endfor %}
+				</ul>
 				<br/>
 				{% endfor %}
-			</ul>
 		</div>
 		<div class="employ col-12">
 			<h5 class="notes heading bold box">Employment History</h5>
-			<hr class="hr2"/>
-			<hr class="hr1"></hr>
-			<hr class="hr1"></hr>
-			<hr class="hr1"></hr>
-			<hr class="hr1"></hr>
-			<hr class="hr1"></hr>
+
 		</div>
 	</div>
 </body>
