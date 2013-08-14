@@ -1,6 +1,6 @@
 body {
 /*	background-color: #222;*/
-	position: absolute;
+	position: relative;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -12,6 +12,36 @@ body {
 	text-align: center;
 }
 
+.header {
+	margin-top: 3em;
+	margin-bottom: 15em;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+.header img {
+	display: inline-block;
+	float: left;
+	margin-top: 0;
+	/*clear: both;*/
+}
+ 
+.hashtag {
+	clear: both;
+	height: inherit;
+	width: inherit;
+	display: inline-block;
+	float: right;
+	margin-top: 30px;
+}
+
 .title, .hashtag {
     font-family: 'Lucida Grande';
 }
@@ -20,7 +50,8 @@ body {
 	overflow: hidden;
 	height: 100%;
 	/*width: 50%;*/
-	margin: 0 auto;
+	margin: 0 10em;
+	bottom: 0;
 }
 
 .student {
