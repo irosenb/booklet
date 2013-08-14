@@ -116,18 +116,15 @@ def parse_all(type)
         elsif count == 17
 
           item = "\n- #{item}"
-
+#          print(item)
           if item =~ /\\r\\n/
             item = item.gsub( /(\\r\\n)+/, "\n" )
           end
-
-          # if item =~ /\"/
-          #   item = item.gsub( /(\")+/, "\"" )
-          # end
-
-          if item =~ /,/
-            item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-          end
+#          else
+            if item =~ /,/
+              item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+            end
+#          end
 
           # Capitalize
           item = item.gsub(/^\W*(\w)/){ |m| 
@@ -142,7 +139,7 @@ def parse_all(type)
           # Can we combine the above regex into a single, more elegant
           # capture and substitution?
           item = "#{item}"
-
+          
         elsif count == 18
           item = "\n- \"#{item}"
           item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
