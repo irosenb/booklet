@@ -5,7 +5,7 @@ css: front.css
 ---
 
 <div id="home">
-  <h1>Class of Summer 2013</h1>
+  <h1 class="bold semester">Class of Summer 2013</h1>
 
   <div class="students">
     {% for post in site.posts reversed %}
@@ -14,18 +14,18 @@ css: front.css
 
       <a href="{{ post.url }}">
         {{ post.first_name }}
-	<span class="bold">{{ post.last_name }}</span>
+        <span class="bold">{{ post.last_name }}</span>
       </a>
 
       <a href="{{ post.url }}">
-	<span class="box id">
-          {{ forloop.index | plus:1 | divided_by:2 }}
+       <span class="box id">
+        {{ forloop.index | plus:1 | divided_by:2 }}
 	  <!-- Temporary fix. Ideally, get each number to match each
-	       student's ID. -->
-	</span>
+    student's ID. -->
+        </span>
       </a>
     </div>
     {% endif %}
     {% endfor %}
-  </div>
+</div>
 </div>

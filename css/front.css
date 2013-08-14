@@ -4,7 +4,9 @@ body {
 	top: 0;
 	bottom: 0;
 	left: 0;
-	right: 0;    
+	right: 0;
+	font-family: 'Lucida Grande'; 
+	letter-spacing: -.1em;   
 	/*text-align: center;*/
 }
 
@@ -13,8 +15,9 @@ body {
 }
 
 .header {
-	margin-top: 3em;
-	margin-bottom: 15em;
+	margin: 3em 3em 15em;
+	/*margin-top: 3em;
+	margin-bottom: 15em;*/
 }
 
 .header.cover {
@@ -34,11 +37,19 @@ body {
 	line-height: 0;
 }
 
+.semester {
+    font-size: 22px;
+}
+
 .header img {
 	display: inline-block;
 	float: left;
 	margin-top: 0;
 	/*clear: both;*/
+}
+
+.header h1 {
+	font-weight: lighter;
 }
  
 .hashtag {
