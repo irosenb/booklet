@@ -2,47 +2,46 @@
 # Parses tab-delimited text file of student profile survey results.
 # Goal for this file: combine all other parse methods and execute
 # require functionality by passing in a type argument.
-
-# This file needs to be cleaned up. Also, parsing can probably be combined,
-# rather than being done four times (once for each type).
-
+#
 # TODO:
-# Modularize (use `extract method` in several places in #parse_all)
+# Modularize (use `extract method` in several places in #parse_all).
+# Clean up.
 
 def valid_url(url)
-  res = Net::HTTP.get_response(URI.parse(url))
-  res.code.to_i == 200
+  response = Net::HTTP.get_response(URI.parse(url))
+  response.code.to_i == 200
 end
 
 
 class Generator
 
-  attr_accessor :count, :count_dl, :type, :txt, :item
+  attr_accessor :count, :count_dl, :type, :txt, :item, :id
+  # Not sure about :id
 
 
   def get_first_name
-    if .count == 2
+    if count == 2
       first_name = "#{item}"
     end
   end
 
   def get_last_name
-    if .count == 2
+    if count == 2
       last_name = "#{item}"
     end
   end
 
   def get_phone_num
-    if .count == 4
-      item = .item.gsub(/\A(\d{3,4})(\d{3})(\d{4})\Z/, "\\1-\\2-\\3")
+    if count == 4
+      item = item.gsub(/\A(\d{3,4})(\d{3})(\d{4})\Z/, "\\1-\\2-\\3")
     end
   end
 
-  def get_bio
+  def get_image # TODO: RENAME!
 
-    if .count == .count_dl and "#{.item}".include?("(")
+    if count == count_dl and "#{item}".include?("(")
 
-      url = "#{.item}".scan(/\(([^\)]+)\)/)[0][0]
+      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
 
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         txt << "#{url}\n"
@@ -59,6 +58,113 @@ class Generator
         end
 
       end
+    end
+
+  end
+
+  def get_resume
+
+    if count == 6 and "#{item}".include?("(")
+
+      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+
+      if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
+        ext = url.match(/(\w{2,})$/)
+        item = "#{first_name}#{last_name}.#{ext}"
+      end
+
+    end
+
+  end
+
+  def get_twitter
+
+    if count == 9 
+      if item.chars.to_a[0] == '@'
+        item = item[1..-1]
+      end
+    end
+
+  end
+
+  def get_picture
+
+    if count == 16 and "#{item}".include?("(")
+
+      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+
+      if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
+        ext = url.match(/(\w{2,})$/) # Probably don't need inner ( )s
+        item = "#{first_name}#{last_name}.#{ext}"
+      end
+
+      # TODO: Fix code for items 17 and 18 so that the quotes more
+      # elegantly are wrapped around the array elements.
+
+      # TODO: If there are newlines in the interests, parse by newlines.
+      # If there are only commas, parse by commas.
+
+      # TODO: Make Wufoo able to feed interests via separate fields...
+      # people fill them out / separate their interests too arbitrarily.
+
+    end
+
+  end
+
+  def get_interests
+
+    if count == 17
+
+      item = "\n- #{item}"
+      #          print(item)
+      if item =~ /\\r\\n/
+        item = item.gsub( /(\\r\\n)+/, "\n" )
+      end
+      #          else
+      if item =~ /,/
+        item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+      end
+      #          end
+
+      # Capitalize
+      item = item.gsub(/^\W*(\w)/){ |m| 
+        m.sub($1, $1.upcase) }
+
+      # Wrap each line in quotes
+      # NOTE: This could lead to problems if people do not input
+      # characters of type [\w. \/-]
+      item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
+                       "- \"\\2\"\n")
+
+      # Can we combine the above regex into a single, more elegant
+      # capture and substitution?
+      item = "#{item}"
+    end
+
+  end
+
+  def get_bio
+
+    if count == 18
+      item = "\n- \"#{item}"
+      item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
+      item = "#{item}\""
+    end
+
+  end
+
+  def get_other
+
+    if count == 21
+      item = "\"#{item}\""
+    end
+
+  end
+
+  def add_item_to_text
+
+    if count < 22
+      txt << "#{Rows[count]}: #{item}\n"
     end
 
   end
@@ -95,99 +201,30 @@ class Generator
       first_name = ""
       last_name = ""
 
-      FileUtils.touch(file_path) if (type == "img" or type == "resume")
+      FileUtils.touch(file_path) if (type == "img" or type == "resume") # ???
       dl_file = File.open(file_path, "w") if (type == "img" or type == "resume")
 
       line.split("\t").each do |item|
         count += 1
 
-        first_name = get_first_name #2
-        last_name = get_last_name #3
-        item = get_phone_num #4
-        item = get_image #count_dl
-        item = get_resume #6
-        item = get_twitter #9
-        # number 16???
-        item = get_interests #17
-        item = get_bio #18
-        item = get_other #21
+        first_name = get_first_name
+        last_name = get_last_name
+        item = get_phone_num
+        item = get_image
+        item = get_resume
 
         if (type == "txt" or type.include?("markdown"))
-          if count == 6 and "#{item}".include?("(")
 
-            url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+          item = get_resume
+          item = get_twitter
+          item = get_picture # ???
+          item = get_interests
+          item = get_bio
+          item = get_other
 
-            if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
-              ext = url.match(/(\w{2,})$/)
-              item = "#{first_name}#{last_name}.#{ext}"
-            end
-
-          elsif count == 9 
-            if item.chars.to_a[0] == '@'
-              item = item[1..-1]
-            end
-
-          elsif count == 16 and "#{item}".include?("(")
-
-            url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
-
-            if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
-              ext = url.match(/(\w{2,})$/) # Probably don't need inner ( )s
-              item = "#{first_name}#{last_name}.#{ext}"
-            end
-
-            # TODO: Fix code for items 17 and 18 so that the quotes more
-            # elegantly are wrapped around the array elements.
-
-            # TODO: If there are newlines in the interests, parse by newlines.
-            # If there are only commas, parse by commas.
-
-            # TODO: Make Wufoo able to feed interests via separate fields...
-            # people fill them out / separate their interests too arbitrarily.
-
-          elsif count == 17
-
-            item = "\n- #{item}"
-            #          print(item)
-            if item =~ /\\r\\n/
-              item = item.gsub( /(\\r\\n)+/, "\n" )
-            end
-            #          else
-            if item =~ /,/
-              item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-            end
-            #          end
-
-            # Capitalize
-            item = item.gsub(/^\W*(\w)/){ |m| 
-              m.sub($1, $1.upcase) }
-
-            # Wrap each line in quotes
-            # NOTE: This could lead to problems if people do not input
-            # characters of type [\w. \/-]
-            item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
-                             "- \"\\2\"\n")
-
-            # Can we combine the above regex into a single, more elegant
-            # capture and substitution?
-            item = "#{item}"
-            
-          elsif count == 18
-            item = "\n- \"#{item}"
-            item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
-            #          item = item.gsub(/(- )+([\w. -]+)[\n|$]*/, "- \"\\2\"\n")
-            item = "#{item}\""
-
-          elsif count == 21
-            item = "\"#{item}\""
-
-          end
-
-          if count < 22
-            txt << "#{Rows[count]}: #{item}\n"
-            #          puts txt
-          end
         end
+
+        add_item_to_text
 
       end
 
