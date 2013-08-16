@@ -14,22 +14,47 @@ def valid_url(url)
   res.code.to_i == 200
 end
 
-def get_first_name(item, count)
-  if count == 2
+def get_first_name(data)
+  if data[count ]acce== 2
     first_name = "#{item}"
   end
 end
 
-def get_last_name(item, count)
+def get_last_name(data)
   if count == 2
     last_name = "#{item}"
   end
 end
 
-def get_phone_num(item, count)
+def get_phone_num(data)
   if count == 4
     item = item.gsub(/\A(\d{3,4})(\d{3})(\d{4})\Z/, "\\1-\\2-\\3")
   end
+end
+
+def get_bio(data)
+
+  if count == count_dl and "#{item}".include?("(")
+
+    url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+
+    if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
+      txt << "#{url}\n"
+      dir = file_path.scan(/^(\w+)\//)[0][0]
+      
+      if valid_url(url)
+        download("#{url}", id, first_name, last_name, dir)
+
+        if type == "img"
+          ext = url.match(/(\w{2,})$/)
+          FileUtils.cp("img/#{first_name}#{last_name}.#{ext}",
+                       "../img/student/")
+        end
+      end
+
+    end
+  end
+
 end
 
 def parse_all(type)
@@ -59,6 +84,7 @@ def parse_all(type)
       print "\nInvalid type given to parse_all method.\n"
       return nil
     end
+
     txt ||= ""
     first_name = ""
     last_name = ""
@@ -69,36 +95,19 @@ def parse_all(type)
     line.split("\t").each do |item|
       count += 1
 
-      first_name = get_first_name(item, count) #2
-      last_name = get_last_name(item, count) #3
-      item = get_phone_num(item, count) #4
-      item = get_image(item, count) #count_dl
-      item = get_resume(item, count) #6
-      item = get_twitter(item, count) #9
+      data = { :item => item, :count => count, :count_dl => count_dl,
+        :type => type }
+
+      first_name = get_first_name(data) #2
+      last_name = get_last_name(data) #3
+      item = get_phone_num(data) #4
+      item = get_image(data) #count_dl
+      item = get_resume(data) #6
+      item = get_twitter(data) #9
       # number 16???
-      item = get_interests(item, count) #17
-      item = get_bio(item, count) #18
-      item = get_other(item, count) #21
-        
-      elsif count == count_dl and "#{item}".include?("(")
-
-        url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
-
-        if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
-          txt << "#{url}\n"
-          dir = file_path.scan(/^(\w+)\//)[0][0]
-          
-          if valid_url(url)
-            download("#{url}", id, first_name, last_name, dir)
-
-            if type == "img"
-              ext = url.match(/(\w{2,})$/)
-              FileUtils.cp("img/#{first_name}#{last_name}.#{ext}", "../img/student/")
-            end
-          end
-
-        end
-      end
+      item = get_interests(data) #17
+      item = get_bio(data) #18
+      item = get_other(data) #21
 
       if (type == "txt" or type.include?("markdown"))
         if count == 6 and "#{item}".include?("(")
