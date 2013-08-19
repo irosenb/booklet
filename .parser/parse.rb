@@ -18,6 +18,9 @@ Rows = ["nil",
         "coderwall", "hackernews", "teamtreehouse", "codeschool",
         "picture", "interests", "bio", "looking", "live", "other"]
 
+# To be filled in via #scraper
+Student_IDs = { }
+
 def download(url, n, first, last, dir)
 
   ext = url.match(/(\w{2,})$/)
@@ -31,6 +34,9 @@ def download(url, n, first, last, dir)
 end
 
 def parser
+
+  # TODO: Generate correct list of IDs based on alphabetical order of first
+  # names, and make a hash of it. 
   
   if ARGV.length == 0
 
@@ -58,6 +64,7 @@ def parser
   end
 
 end
+
 
 scraper
 parser
