@@ -111,8 +111,12 @@ tr {
 }
 
 .person h2 {
-	font-family: 'Lucida Grande';
 	letter-spacing: -.1em;
+	font-family: 'Lucida Grande';
+}
+
+.name .word2 {
+	
 }
 
 .person .id {
