@@ -52,6 +52,7 @@ hr {
 
 .header {
 	text-align: center;
+/*	width: 200px; /* Something arbitrarily small BAD! SEE FRONT PAGE */
 }
 
 .header a {
@@ -122,6 +123,9 @@ hr {
 .name .word2 {
 	font-weight: bold;
 	text-transform: uppercase;
+	/* width: 300px; /\* Something arbitrarily large to fit long names *\/ */
+	/* text-align: right; */
+	/* margin-right: 20px; */
 }
 
 .person .id {

@@ -11,12 +11,16 @@ require 'fileutils'
 require_relative 'parse_all'
 require_relative 'scrape'
 
-# Ideally get rid of this first "nil" field...
+# Ideally, get rid of nil field...
 Rows = ["nil",
         "profile_num", "first_name", "last_name", "phone", "email", "resume",
         "linkedin", "blog", "twitter", "github", "stackoverflow", 
         "coderwall", "hackernews", "teamtreehouse", "codeschool",
         "picture", "interests", "bio", "looking", "live", "other"]
+
+# To be filled in via #scraper
+Student_IDs = { }
+
 
 def download(url, n, first, last, dir)
 
@@ -31,23 +35,36 @@ def download(url, n, first, last, dir)
 end
 
 def parser
-  print "Creating markdown files for profiles... "
-  parse_all("markdown_p")
+  
+  if ARGV.length == 0
 
-  print "Done.\nCreating markdown files for resumes... "
-  parse_all("markdown_r")
+    print "Creating markdown files for profiles... "
+    
+    profile_page = Generator.new("markdown_p")
+    print "Done.\nCreating markdown files for resumes... "
 
-  print "Done.\nCreating text files... "
-  parse_all("txt")
+    resume_page = Generator.new("markdown_r")
+    print "Done.\nCreating text files... "
 
-  print "Done.\nDownloading image files... "
-  parse_all("img")
+    txt = Generator.new("txt")
+    print "Done.\nDownloading image files... "
 
-  print "Done.\nDownloading resume files... "
-  parse_all("resume")
+    img = Generator.new("img")
+    print "Done.\nDownloading resume files... "
 
-  print "\nCompleted parsing and downloading.\n"
+    resume_file = Generator.new("resume")
+    print "Done.\nCompleted parsing and downloading.\n"
+
+  elsif ARGV.length > 0
+    
+    # ... Specify what parsing will be done via CL arguments ...
+    # (i.e., if we don't want to download everything all over again...)
+    # Make these more universal (maybe put them in the bash scripts?)
+
+  end
+
 end
+
 
 scraper
 parser

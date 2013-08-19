@@ -30,7 +30,12 @@
 		</div>
 
 		<div class="person col-5">
-			<h2 class="name">{{ page.first_name }} <span class="bold">{{ page.last_name }}</span> </h2>
+
+			<h2 class="name">{{ page.first_name }} <span class="bold">
+			    {{ page.last_name }}
+			  </span>
+			</h2>
+
 			<p class="profile">
 			  <a href="/{{ page.first_name }}{{ page.last_name }}_resume">Profile</a>
 			</p>
@@ -55,9 +60,10 @@
 			{% endfor %}
 			<div class="field bold left">Blog</div> 
 			<div class="right uline">{{ page.blog }} </div> 	<!-- Blog posts? -->
-			{% for post in page.blog %}
-			<div class="left"> {{ post }} </div>
-			{% endfor %}
+			<!-- The following is for posts. -->
+			<!-- {% for post in page.blog %} -->
+			<!-- <div class="left"> {{ post }} </div> -->
+			<!-- {% endfor %} -->
 		</div>
 		<div class="bio col-7">
 			<h5 class="heading bold	box">Bio</h5>
