@@ -147,16 +147,15 @@ class Generator
       item = item.gsub( /(- - )/, "- ") # ???
 
     else
+
       if item =~ /,/
-
         item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-
       end
+
     end
 
     # Capitalize
-    item = item.gsub(/^\W*(\w)/){ |m| 
-      m.sub($1, $1.upcase) }
+    item = item.gsub(/^\W*(\w)/) { |m| m.sub($1, $1.upcase) }
 
     # Wrap each line in quotes
     # NOTE: This could lead to problems if people do not input
