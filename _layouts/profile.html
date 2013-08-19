@@ -15,11 +15,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="/js/bootstrap.js"></script>
 	<script src="/js/jquery.lettering-0.6.1.min.js"></script>
-	<script>
-	  $(document).ready(function() {
-	    $(".name").lettering('words');
-	  });
-	</script>
+	{% include lettering.html %}
 
 </head>
 <body>
@@ -34,7 +30,7 @@
 		</div>
 
 		<div class="person col-5">
-			<h2 class="name">{{ page.first_name }} <div class="bold">{{ page.last_name }}</div> </h2>
+			<h2 class="name">{{ page.first_name }} <span class="bold">{{ page.last_name }}</span> </h2>
 			<p class="profile">
 			  <a href="/{{ page.first_name }}{{ page.last_name }}_resume">Profile</a>
 			</p>

@@ -20,6 +20,10 @@ tr {
 	display: inline;
 }
 
+hr {
+	border-style: none;
+}
+
 .uline {
     text-decoration: underline;
 }
@@ -116,7 +120,8 @@ tr {
 }
 
 .name .word2 {
-	
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .person .id {
