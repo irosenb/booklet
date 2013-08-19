@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # Convert images to grayscale versions.
 
-if [[ "$(pwd)" == *booklet ]]
+if [[ "$(pwd)" == *parser ]]
 then
-    cd img/student/
+    cd ../img/student/
 
     for file in ./*; do
-	convert -colorspace gray $file $file
+	if [[ $file == *.jpg || $file == *.jpeg || $file == *.png ]]; then
+	    echo $file
+	    convert -colorspace gray $file $file
+	fi
     done
 else
-    echo "Must run generator within the \"booklet\" directory."
+    echo "Must run grayscale converter within the \"booklet\" directory."
 fi

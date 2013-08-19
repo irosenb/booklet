@@ -6,7 +6,7 @@ if [[ "$(pwd)" == *booklet ]]
 then
     cd .parser
     ./clean.sh
-    ruby parse.rb $1
+    ruby parse.rb
     ./convert_imgs.sh
 else
     echo "Must run generator within the \"booklet\" directory."

@@ -36,26 +36,20 @@ def parser
 
     print "Creating markdown files for profiles... "
     
-    profile = Generator.new.parse_all("markdown_p")
-#    parse_all("markdown_p")
-
+    profile_page = Generator.new("markdown_p")
     print "Done.\nCreating markdown files for resumes... "
-#    parse_all("markdown_r")
-    profile = Generator.new.parse_all("markdown_r")
 
+    resume_page = Generator.new("markdown_r")
     print "Done.\nCreating text files... "
-#    parse_all("txt")
-    profile = Generator.new.parse_all("txt")
 
+    txt = Generator.new("txt")
     print "Done.\nDownloading image files... "
-#    parse_all("img")
-    profile = Generator.new.parse_all("img")
 
+    img = Generator.new("img")
     print "Done.\nDownloading resume files... "
-#    parse_all("resume")
-    profile = Generator.new.parse_all("resume")
 
-    print "\nCompleted parsing and downloading.\n"
+    resume_file = Generator.new("resume")
+    print "Done.\nCompleted parsing and downloading.\n"
 
   elsif ARGV.length > 0
     
