@@ -40,16 +40,19 @@ class Generator
 
   def initialize(type)
     @type = type
+    @count = 0
+    @id = 1
+
     parse_all
   end
 
 
   def get_first_name(item)
-    @first_name = "#{item}"
+    @first_name = item
   end
 
   def get_last_name(item)
-    @last_name = "#{item}"
+    @last_name = item
   end
 
   def get_phone_num(item)
@@ -58,16 +61,16 @@ class Generator
 
   def get_image(item, file_path) # TODO: RENAME!
 
-    if "#{item}".include?("(")
+    if item.include?("(")
 
-      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+      url = item.scan(/\(([^\)]+)\)/)[0][0]
 
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         @txt << "#{url}\n"
         dir = file_path.scan(/^(\w+)\//)[0][0]
         
         if valid_url(url)
-          download("#{url}", @id, @first_name, @last_name, dir)
+          download(url, @id, @first_name, @last_name, dir)
 
           if @type == "img"
             ext = url.match(/(\w{2,})$/)
@@ -83,9 +86,9 @@ class Generator
 
   def get_resume(item)
 
-    if "#{item}".include?("(")
+    if item.include?("(")
 
-      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+      url = item.scan(/\(([^\)]+)\)/)[0][0]
 
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         ext = url.match(/(\w{2,})$/)
@@ -98,7 +101,7 @@ class Generator
 
   def get_twitter(item)
 
-    if item.to_s.chars.to_a[0] == '@'
+    if item.chars.to_a[0] == '@'
       item = item[1..-1]
     end
 
@@ -107,9 +110,9 @@ class Generator
 
   def get_picture(item)
 
-    if "#{item}".include?("(")
+    if item.include?("(")
 
-      url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
+      url = item.scan(/\(([^\)]+)\)/)[0][0]
 
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         ext = url.match(/(\w{2,})$/) # Probably don't need inner ( )s
@@ -132,15 +135,24 @@ class Generator
   def get_interests(item)
 
     item = "\n- #{item}"
-    #          print(item)
+
+    if item =~ /(\\r\\n)+$/
+      item = item.gsub( /(\\r\\n)+$/, "" )
+      # Strip returns from end of string
+    end
+
     if item =~ /\\r\\n/
-      item = item.gsub( /(\\r\\n)+/, "\n" )
+
+      item = item.gsub( /(\\r\\n)+/, "\n- " )
+      item = item.gsub( /(- - )/, "- ") # ???
+
+    else
+      if item =~ /,/
+
+        item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+
+      end
     end
-    #          else
-    if item =~ /,/
-      item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-    end
-    #          end
 
     # Capitalize
     item = item.gsub(/^\W*(\w)/){ |m| 
@@ -148,13 +160,13 @@ class Generator
 
     # Wrap each line in quotes
     # NOTE: This could lead to problems if people do not input
-    # characters of @type [\w. \/-]
-    item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
+    # characters of type [\w. (etc...) \/-]
+    item = item.gsub(/(- )*([\w., \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
                      "- \"\\2\"\n")
 
     # Can we combine the above regex into a single, more elegant
     # capture and substitution?
-    item = "#{item}"
+    item
   end
 
   def get_bio(item)
@@ -172,9 +184,6 @@ class Generator
   end
 
   def parse_all
-
-    @count = 0
-    @id = 1
 
     file = File.open("bak/sps.txt").each do |line|
 
@@ -226,7 +235,7 @@ class Generator
           item = get_image(item, file_path)
         end
 
-        if (@type == "txt" or @type.include?("markdown"))
+        if (@type == "txt") or (@type.include?("markdown"))
 
           case @count
           when 6
@@ -244,7 +253,6 @@ class Generator
           end
 
         end
-
 
         if @count == 2
           add_item_to_text(@first_name)
@@ -265,7 +273,7 @@ class Generator
       @count = 0
       @id += 1
 
-      if (@type == "txt" or @type.include?("markdown"))
+      if (@type == "txt") or (@type.include?("markdown"))
         @txt << "---"
         md_name = ""
 
@@ -285,8 +293,7 @@ class Generator
         student << @txt
         student.close
 
-        human_readable_type = human_readable(@type)
-        print("Finished #{human_readable_type} for #{@first_name} #{@last_name}\n")
+        print("Finished #{human_readable(@type)} for #{@first_name} #{@last_name}\n")
 
       end
 

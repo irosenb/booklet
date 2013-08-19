@@ -48,6 +48,7 @@ tr {
 
 .header {
 	text-align: center;
+/*	width: 200px; /* Something arbitrarily small BAD! SEE FRONT PAGE */
 }
 
 .header a {
@@ -113,6 +114,9 @@ tr {
 .person h2 {
 	font-family: 'Lucida Grande';
 	letter-spacing: -.1em;
+	/* width: 300px; /\* Something arbitrarily large to fit long names *\/ */
+	/* text-align: right; */
+	/* margin-right: 20px; */
 }
 
 .person .id {
