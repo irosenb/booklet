@@ -250,7 +250,7 @@ div.right {
 }
 
 #interests li, #edu li, #tech li, #job_duty li {
-	padding-left: 1em;
+	padding-left: 1.3em;
 	text-indent: -1em;
 	vertical-align: text-bottom;
 	/*vertical-align: middle;*/
