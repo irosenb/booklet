@@ -12,10 +12,8 @@
 	<link rel="stylesheet" type="text/css" media="screen, print" href="/css/bootstrap.css">
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="stylesheet" href="/css/style.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script src="/js/bootstrap.js"></script>
-	<script src="/js/jquery.lettering-0.6.1.min.js"></script>
 	{% include lettering.html %}
+	<script src="/js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -31,7 +29,7 @@
 		<div class="person col-5">
 			<h2 class="name">
 				{{ page.first_name }}
-				<span class="bold">{{ page.last_name }}</span>
+				{{ page.last_name }}
 			</h2>
 			<p class="resume">
 				<a href="/{{ page.first_name }}{{ page.last_name }}_profile">Resume</a>

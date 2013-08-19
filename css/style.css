@@ -93,7 +93,7 @@ hr {
 	float: left;
 }
 
-.bold {
+.bold, .char9, .char10, .char11, .char12 {
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -116,16 +116,24 @@ hr {
 }
 
 .person h2 {
-	letter-spacing: -.1em;
+	letter-spacing: -.1em;	
 	font-family: 'Lucida Grande';
+	direction: rtl;
+	white-space: nowrap;
 }
 
-.name .word2 {
+.name .word6 {
 	font-weight: bold;
 	text-transform: uppercase;
 	/* width: 300px; /\* Something arbitrarily large to fit long names *\/ */
 	/* text-align: right; */
 	/* margin-right: 20px; */
+}
+
+.name span {
+	/*float: right;*/
+	/*display: inline-block;*/
+
 }
 
 .person .id {
