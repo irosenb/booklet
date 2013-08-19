@@ -21,6 +21,7 @@ Rows = ["nil",
 # To be filled in via #scraper
 Student_IDs = { }
 
+
 def download(url, n, first, last, dir)
 
   ext = url.match(/(\w{2,})$/)
@@ -34,9 +35,6 @@ def download(url, n, first, last, dir)
 end
 
 def parser
-
-  # TODO: Generate correct list of IDs based on alphabetical order of first
-  # names, and make a hash of it. 
   
   if ARGV.length == 0
 
@@ -59,7 +57,9 @@ def parser
 
   elsif ARGV.length > 0
     
-    # ...
+    # ... Specify what parsing will be done via CL arguments ...
+    # (i.e., if we don't want to download everything all over again...)
+    # Make these more universal (maybe put them in the bash scripts?)
 
   end
 

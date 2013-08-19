@@ -178,8 +178,12 @@ class Generator
     item = "\"#{item}\""
   end
 
-  def add_item_to_text(item)
-    @txt << "#{Rows[@count]}: #{item}\n"
+  def add_item_to_text(item, student_id = false)
+    if !(student_id)
+      @txt << "#{Rows[@count]}: #{item}\n"
+    else
+      @txt << "profile_num: #{item}\n"
+    end
   end
 
   def parse_all
@@ -228,6 +232,8 @@ class Generator
           @first_name = get_first_name(item)
         when 3
           @last_name = get_last_name(item)
+          @id = Student_IDs[[@first_name, @last_name]]
+#          print "#{@id}, #{@first_name}, #{@last_name}\n"
         when 4
           item = get_phone_num(item)
         when @count_dl
@@ -253,15 +259,17 @@ class Generator
 
         end
 
+        
         if @count == 2
           add_item_to_text(@first_name)
           
         elsif @count == 3
           add_item_to_text(@last_name)
+          add_item_to_text(@id, true)
 
         elsif @count != @count_dl
 
-          if @count < 22
+          if (@count > 1) and (@count < 22)
             add_item_to_text(item)
           end
 
@@ -270,7 +278,8 @@ class Generator
       end
 
       @count = 0
-      @id += 1
+#      @id += 1
+
 
       if (@type == "txt") or (@type.include?("markdown"))
         @txt << "---"

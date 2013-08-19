@@ -26,16 +26,20 @@ def scraper
       name = []
 
       student.each do |field|
+
         count += 1
         if count == 2 or count == 3
           name << field[1]
         end
-        txt << ("%s\t" % (field[1].inspect)[1..-2]) if count < 22
-      end
-      names << name
 
+        txt << ("%s\t" % (field[1].inspect)[1..-2]) if count < 22
+
+      end
+
+      names << name
       txt << "\n"
       sps.write(txt)
+
     end
 
     names = names.uniq
