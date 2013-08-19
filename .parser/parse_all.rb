@@ -45,29 +45,20 @@ class Generator
 
 
   def get_first_name(item)
-    if @count == 2
-      @first_name = "#{item}"
-    end
-    @first_name
+    @first_name = "#{item}"
   end
 
   def get_last_name(item)
-    if @count == 3
-      @last_name = "#{item}"
-    end
-    @last_name
+    @last_name = "#{item}"
   end
 
   def get_phone_num(item)
-    if @count == 4
-      item = item.gsub(/\A(\d{3,4})(\d{3})(\d{4})\Z/, "\\1-\\2-\\3")
-    end
-    item
+    item = item.gsub(/\A(\d{3,4})(\d{3})(\d{4})\Z/, "\\1-\\2-\\3")
   end
 
   def get_image(item, file_path) # TODO: RENAME!
 
-    if @count == @count_dl and "#{item}".include?("(")
+    if "#{item}".include?("(")
 
       url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
 
@@ -92,7 +83,7 @@ class Generator
 
   def get_resume(item)
 
-    if @count == 6 and "#{item}".include?("(")
+    if "#{item}".include?("(")
 
       url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
 
@@ -107,17 +98,16 @@ class Generator
 
   def get_twitter(item)
 
-    if @count == 9 
-      if item.to_s.chars.to_a[0] == '@'
-        item = item[1..-1]
-      end
+    if item.to_s.chars.to_a[0] == '@'
+      item = item[1..-1]
     end
+
     item
   end
 
   def get_picture(item)
 
-    if @count == 16 and "#{item}".include?("(")
+    if "#{item}".include?("(")
 
       url = "#{item}".scan(/\(([^\)]+)\)/)[0][0]
 
@@ -141,61 +131,44 @@ class Generator
 
   def get_interests(item)
 
-    if @count == 17
-
-      item = "\n- #{item}"
-      #          print(item)
-      if item =~ /\\r\\n/
-        item = item.gsub( /(\\r\\n)+/, "\n" )
-      end
-      #          else
-      if item =~ /,/
-        item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
-      end
-      #          end
-
-      # Capitalize
-      item = item.gsub(/^\W*(\w)/){ |m| 
-        m.sub($1, $1.upcase) }
-
-      # Wrap each line in quotes
-      # NOTE: This could lead to problems if people do not input
-      # characters of @type [\w. \/-]
-      item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
-                       "- \"\\2\"\n")
-
-      # Can we combine the above regex into a single, more elegant
-      # capture and substitution?
-      item = "#{item}"
-      
+    item = "\n- #{item}"
+    #          print(item)
+    if item =~ /\\r\\n/
+      item = item.gsub( /(\\r\\n)+/, "\n" )
     end
-    item
+    #          else
+    if item =~ /,/
+      item = item.gsub( /(\,)[ ]*(\w{2,})/, "\n- \\2" )
+    end
+    #          end
+
+    # Capitalize
+    item = item.gsub(/^\W*(\w)/){ |m| 
+      m.sub($1, $1.upcase) }
+
+    # Wrap each line in quotes
+    # NOTE: This could lead to problems if people do not input
+    # characters of @type [\w. \/-]
+    item = item.gsub(/(- )*([\w. \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
+                     "- \"\\2\"\n")
+
+    # Can we combine the above regex into a single, more elegant
+    # capture and substitution?
+    item = "#{item}"
   end
 
   def get_bio(item)
-
-    if @count == 18
-      item = "\n- \"#{item}"
-      item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
-      item = "#{item}\""
-    end
-    item
+    item = "\n- \"#{item}"
+    item = item.gsub( /(\.)[ ]*(\\r\\n)+(\w{2,})/, "\\1\"\n- \"\\3" )
+    item = "#{item}\""
   end
 
   def get_other(item)
-
-    if @count == 21
-      item = "\"#{item}\""
-    end
-    item
+    item = "\"#{item}\""
   end
 
   def add_item_to_text(item)
-
-    if @count < 22
-      @txt << "#{Rows[@count]}: #{item}\n"
-    end
-    item
+    @txt << "#{Rows[@count]}: #{item}\n"
   end
 
   def parse_all
@@ -230,8 +203,11 @@ class Generator
       @first_name = ""
       @last_name = ""
 
-      FileUtils.touch(file_path) if (@type == "img" or @type == "resume") # ???
-      dl_file = File.open(file_path, "w") if (@type == "img" or @type == "resume")
+      FileUtils.touch(file_path) if
+        (@type == "img") or (@type == "resume") # ???
+
+      dl_file = File.open(file_path, "w") if
+        (@type == "img") or (@type == "resume")
 
       line.split("\t").each do |item|
         @count += 1
@@ -272,12 +248,15 @@ class Generator
 
         if @count == 2
           add_item_to_text(@first_name)
-        
+          
         elsif @count == 3
           add_item_to_text(@last_name)
 
         elsif @count != @count_dl
-          add_item_to_text(item)
+
+          if @count < 22
+            add_item_to_text(item)
+          end
 
         end
 
@@ -311,13 +290,10 @@ class Generator
 
       end
 
-      # @count = 0
-      # @id += 1
-
       if @type.include?("markdown")
-        FileUtils.cp("markdown/#{md_name}",
-                     "../_posts/#{md_name}")
+        FileUtils.cp("markdown/#{md_name}", "../_posts/#{md_name}")
       end
+
     end
   end
 end
