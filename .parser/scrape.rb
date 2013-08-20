@@ -58,14 +58,14 @@ def scraper
     names.sort!
 
     # Refactor this bit #
-    for profile in names
+    for student_name in names
       item = ""
 
-      for part in profile
+      for part in student_name
         item << part
       end
 
-      Page_Titles << "#{item}_profile.html\n#{item}_resume.html\n"
+      Page_Titles << "#{item}_profile/index.html\n#{item}_resume/index.html\n"
     end
     #####################
 

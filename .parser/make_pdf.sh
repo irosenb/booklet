@@ -12,3 +12,15 @@
 
 # Alternatively, grab them by their localhost addresses
 
+files=""
+
+while read line
+do
+    line=$line | tr '\n' ' '
+    files="${files}http://0.0.0.0:4000/${line} "
+
+done < "pdf_page_names.txt"
+
+#echo "$files"
+
+wkhtmltopdf --ignore-load-errors -B 0 -T 0 -R 0 -L 0 $files booklet.pdf
