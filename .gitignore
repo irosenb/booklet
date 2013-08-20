@@ -9,3 +9,4 @@ _site
 img/student/*
 _posts/*
 test.pdf
+.parser/booklet.pdf
