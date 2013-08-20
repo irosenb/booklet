@@ -6,41 +6,40 @@ css: front.css
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"> -->
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/{{ page.css }} ">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/{{ page.css }} ">
+    <!-- Include this file for every page -->
+    {% include lettering.html %}
 
-    </head>
-    <body>
+</head>
+<body>
 
-		<div class="header cover col-7 ">
+  <div class="header cover col-7 ">
 
-<a href="/">
-				<img class="logo medium" src="/img/flatiron-school.png">
-</a>
+    <a href="/">
+     <img class="logo medium" src="/img/flatiron-school.png">
+ </a>
 
-		</div>
+</div>
 
-            </div>
-	    <div class="fair_info">
-	      <h1 class="hashtag fair_cover">
-		#Science<span class="bold">fair</span>
-	      </h1>
-	      <h3 class="description class">Summer 2013</h3>
-	      <h3 class="description">August 15, 2013</h3>
-	      <h3 class="description">33 West 26th St, 2nd FL</h3>
-	      <h3 class="description">New York, NY 10010</h3>
-	    </div>
-    </body>
+<div class="fair_info">
+    <h1 class="hashtag fair_cover">#Science<span class="bold">fair</span></h1>
+  <h3 class="description class">Summer 2013</h3>
+  <h3 class="description">August 15, 2013</h3>
+  <h3 class="description">33 West 26th St, 2nd FL</h3>
+  <h3 class="description">New York, NY 10010</h3>
+</div>
+</body>
 </html>
