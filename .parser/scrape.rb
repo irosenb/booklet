@@ -37,6 +37,18 @@ def scraper
       end
 
       names << name
+
+
+      # for profile_looper in name
+      #   Page_Titles << profile_looper.to_s
+      # end
+      # Page_Titles << "_profile\n"
+      # for resume_looper in name
+      #   Page_Titles << resume_looper.to_s
+      # end
+      # Page_Titles << "_resume\n"
+
+
       txt << "\n"
       sps.write(txt)
 
@@ -44,6 +56,23 @@ def scraper
 
     names = names.uniq
     names.sort!
+
+    # Refactor this bit #
+    for profile in names
+      item = ""
+
+      for part in profile
+        item << part
+      end
+
+      Page_Titles << "#{item}_profile.html\n#{item}_resume.html\n"
+    end
+    #####################
+
+    File.open("pdf_page_names.txt", "w") { |file|
+      file.write(Page_Titles)
+    }
+
     id = 1
 
     for student in names

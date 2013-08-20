@@ -21,6 +21,8 @@ Rows = ["nil",
 # To be filled in via #scraper
 Student_IDs = { }
 
+# To be filled in and written to a file to generate the final pdf (#scraper)
+Page_Titles = "cover.html\n\n"
 
 def download(url, n, first, last, dir)
 
