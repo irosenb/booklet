@@ -5,16 +5,13 @@ css: front.css
 ---
 
 <div id="home">
-  <a class = "bold semester" href="/cover.html">
-    <h1 class="bold semester">Class of Summer 2013</h1>
-  </a>
-
+  <h1><a class = "bold semester" href="/cover.html">Class of Summer 2013</a></h1>
   <div class="students">
     {% for post in site.posts reversed %}
     {% if post.layout == 'post' %}
     <div class="student"> 
       <!-- Not pretty, but this lets lettering.js read the words much better. -->
-      <a href="{{ post.url }}">{{ post.first_name }}<span class="bold"> {{ post.last_name }}</span></a>
+      <a class="name" href="{{ post.url }}">{{ post.first_name }}<span class="bold"> {{ post.last_name }}</span></a>
 
       <a href="{{ post.url }}">
        <span class="box id">
