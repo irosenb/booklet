@@ -82,6 +82,10 @@ body {
 	/*line-height: 14px;*/
 }
 
+.student .word2 {
+	letter-spacing: -0.09em;
+}
+
 .student a {
     text-decoration: none;
 	display: block;
