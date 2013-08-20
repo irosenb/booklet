@@ -1,21 +1,21 @@
 ---
 layout: resume
-first_name: Adam
-last_name: Waxman
+first_name: First
+last_name: Last
 profile_num: 1
-phone: 216-533-1493
-email: awaxman11@gmail.com
-resume: AdamWaxman.docx
-linkedin: https://linkedin.com/in/adamjwaxman
-blog: awaxman11.github.io and https://medium.com/@ajwaxman
-twitter: ajwaxman
-github: https://github.com/awaxman11
-stackoverflow: http://stackoverflow.com/users/2148892/awaxman11
-coderwall: https://coderwall.com/awaxman
-hackernews: awaxman11
-teamtreehouse: http://teamtreehouse.com/adamwaxman
-codeschool: https://www.codeschool.com/account
-picture: AdamWaxman.jpg
+phone: 
+email: 
+resume: 
+linkedin: 
+blog: 
+twitter: 
+github: 
+stackoverflow: 
+coderwall: 
+hackernews: 
+teamtreehouse: 
+codeschool: 
+picture: 
 
 technical_experience:
 - project:
