@@ -13,11 +13,8 @@ css: front.css
     {% for post in site.posts reversed %}
     {% if post.layout == 'post' %}
     <div class="student"> 
-
-      <a href="{{ post.url }}">
-        {{ post.first_name }}
-        <span class="bold">{{ post.last_name }}</span>
-      </a>
+      <!-- Not pretty, but this lets lettering.js read the words much better. -->
+      <a href="{{ post.url }}">{{ post.first_name }}<span class="bold"> {{ post.last_name }}</span></a>
 
       <a href="{{ post.url }}">
        <span class="box id">

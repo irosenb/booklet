@@ -12,3 +12,8 @@
 
 # Alternatively, grab them by their localhost addresses
 
+while read line
+do
+    echo "$line"
+    wkhtmltopdf http://0.0.0.0:4000/$line end.pdf # or add em to array?
+done < "pdf_page_names.txt"
