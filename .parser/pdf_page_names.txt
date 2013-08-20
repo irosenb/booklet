@@ -4,8 +4,6 @@ index.html
 blank.html
 AdamWaxman_profile/index.html
 AdamWaxman_resume/index.html
-Adam Waxman_profile/index.html
-Adam Waxman_resume/index.html
 AlexAu_profile/index.html
 AlexAu_resume/index.html
 AlisaChang_profile/index.html
@@ -78,5 +76,3 @@ ThomasDeatherage_profile/index.html
 ThomasDeatherage_resume/index.html
 adfadsf_profile/index.html
 adfadsf_resume/index.html
-testest_profile/index.html
-testest_resume/index.html

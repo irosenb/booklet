@@ -75,6 +75,17 @@ def parser
       img = Generator.new("img")
     when "resume_files"
       resume_file = Generator.new("resume")
+    when "generate"
+      profile_page = Generator.new("markdown_p")
+      resume_page = Generator.new("markdown_r")
+
+      print "Generating pdf of booklet...\n"
+      `./make_pdf.sh`
+      print "\nFinished generating booklet. Downloading images..."
+      img = Generator.new("img") # !
+
+      `./make_pdf.sh`
+      print "\nFinished regenerating images.\n"
     else
       print "Could not parse #{ARGV[0]}: "
       print "Invalid command line option given to parse script.\n"
