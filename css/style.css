@@ -98,7 +98,10 @@ hr {
 	text-transform: uppercase;
 }
 
-.profile, .resume { text-transform: uppercase; }
+.profile, .resume {
+    text-transform: uppercase;
+    margin-right: 0px;
+}
 
 /* .profile, .resume a { */
 /* 	font-size: 0; */

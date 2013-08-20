@@ -1,5 +1,7 @@
 cover.html
+blank.html
 index.html
+blank.html
 AdamWaxman_profile/index.html
 AdamWaxman_resume/index.html
 Adam Waxman_profile/index.html
