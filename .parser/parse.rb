@@ -13,18 +13,15 @@ require_relative 'parse_all'
 require_relative 'scrape'
 require_relative 'set_info'
 
-# Ideally, get rid of nil field...
-Rows = ["nil",
-        "profile_num", "first_name", "last_name", "phone", "email", "resume",
-        "linkedin", "blog", "twitter", "github", "stackoverflow", 
-        "coderwall", "hackernews", "teamtreehouse", "codeschool",
-        "picture", "interests", "bio", "looking", "live", "other"]
-
-# To be filled in via #scraper
 Student_IDs = { }
-
-# To be filled in and written to a file to generate the final pdf (#scraper)
 Page_Titles = "cover.html\nblank.html\nindex.html\nblank.html\n"
+Rows = [ "nil",
+         "profile_num", "first_name", "last_name", "phone", "email", "resume",
+         "linkedin", "blog", "twitter", "github", "stackoverflow", 
+         "coderwall", "hackernews", "teamtreehouse", "codeschool",
+         "picture", "interests", "bio", "tech_1", "tech_2", "tech_3",
+         "tech_4", "edu_1", "edu_2", "edu_3", "edu_4", "job_1", "job_2",
+         "job_3", "job_4", "looking", "live", "other" ]
 
 def download(url, n, first, last, dir)
 
@@ -98,7 +95,7 @@ def parser
       print "Generating pdf of booklet...\n"
       `./make_pdf.sh`
       print "\nFinished generating booklet. Downloading images..."
-      img = Generator.new("img") # !
+      img = Generator.new("img")
 
       `./make_pdf.sh`
       print "\nFinished regenerating images.\n"

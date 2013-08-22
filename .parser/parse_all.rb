@@ -4,7 +4,6 @@
 # require functionality by passing in a type argument.
 #
 # TODO:
-# - Modularize (use `extract method` in several places in #parse_all).
 # - Clean up.
 # - Change name of this file to parse.rb and name of parse.rb to generate.rb?
 
@@ -117,16 +116,14 @@ class Generator
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         ext = url.match(/(\w{2,})$/) # Probably don't need inner ( )s
         item = "#{@first_name}#{@last_name}.#{ext}"
+        print "#{ext}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       end
 
       # TODO: Fix code for items 17 and 18 so that the quotes more
       # elegantly are wrapped around the array elements.
 
-      # TODO: If there are newlines in the interests, parse by newlines.
-      # If there are only commas, parse by commas.
-
       # TODO: Make Wufoo able to feed interests via separate fields...
-      # people fill them out / separate their interests too arbitrarily.
+      # people fill them out / separate their interests too arbitrarily. (!?)
 
     end
     item
@@ -138,7 +135,6 @@ class Generator
 
     if item =~ /(\\r\\n)+$/
       item = item.gsub( /(\\r\\n)+$/, "" )
-      # Strip returns from end of string
     end
 
     if item =~ /\\r\\n/
@@ -154,10 +150,8 @@ class Generator
 
     end
 
-    # Capitalize
     item = item.gsub(/^\W*(\w)/) { |m| m.sub($1, $1.upcase) }
 
-    # Wrap each line in quotes
     # NOTE: This could lead to problems if people do not input
     # characters of type [\w. (etc...) \/-]
     item = item.gsub(/(- )*([\w., \/\-\(\)\:\"\\\&\']+)[\n|$]*/,
@@ -233,7 +227,6 @@ class Generator
         when 3
           @last_name = get_last_name(item)
           @id = Student_IDs[[@first_name, @last_name]]
-#          print "#{@id}, #{@first_name}, #{@last_name}\n"
         when 4
           item = get_phone_num(item)
         when @count_dl
@@ -255,8 +248,9 @@ class Generator
             item = get_bio(item)
           when 21
             item = get_other(item)
+          else
+            item = "\"#{item}\""
           end
-
         end
 
         
@@ -269,7 +263,7 @@ class Generator
 
         elsif @count != @count_dl
 
-          if (@count > 1) and (@count < 22)
+          if (@count > 1) and (@count < 34)
             add_item_to_text(item)
           end
 
@@ -278,8 +272,6 @@ class Generator
       end
 
       @count = 0
-#      @id += 1
-
 
       if (@type == "txt") or (@type.include?("markdown"))
         @txt << "---"

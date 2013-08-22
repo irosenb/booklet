@@ -54,16 +54,16 @@ def scraper
           name << field[1]
         end
 
-        txt << ("%s\t" % (field[1].inspect)[1..-2]) if count < 22
-
+        txt << ("%s\t" % (field[1].inspect)[1..-2]) #if count < 22
+        print (field[1].inspect)[1..-2], count
+        puts
       end
 
       names << name
       txt << "\n"
       sps.write(txt)
-
+#      print txt
     end
-
     names = names.uniq
     names.sort!
 

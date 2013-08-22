@@ -2,5 +2,7 @@ cover.html
 blank.html
 index.html
 blank.html
+IsaacRosenberg_profile/index.html
+IsaacRosenberg_resume/index.html
 StefanLance_profile/index.html
 StefanLance_resume/index.html
