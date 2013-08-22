@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="tech col-7">
-			<h5 class="heading bold	box">Technical Experience</h5>
+			<h5 class="heading box">Technical Experience</h5>
 			{% for project in page.technical_experience %}
 			<span class="project bold">{{ project.name }}</span>
 			-
@@ -49,7 +49,7 @@
 			{% endfor %}
 		</div>
 		<div class="edu col-5">
-			<h5 class="heading bold box">Education</h5>
+			<h5 class="heading box">Education</h5>
 			{% for school in page.education %}
 			<span class="school">{{ school.name }}</span>,
 			<span class="school_date">{{ school.date }}</span>
@@ -62,7 +62,7 @@
 			{% endfor %}
 		</div>
 		<div class="employ col-12">
-			<h5 class="notes heading bold box">Employment History</h5>
+			<h5 class="notes heading box">Employment History</h5>
 			{% for job in page.employment_history %}
 			<div class="job col-3">
 				<div class="company bold">{{ job.company }}</div>
