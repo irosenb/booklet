@@ -116,7 +116,6 @@ class Generator
       if (! (url.match(/\/$/)) ) and ( url.match(/\w+\./) )
         ext = url.match(/(\w{2,})$/) # Probably don't need inner ( )s
         item = "#{@first_name}#{@last_name}.#{ext}"
-        print "#{ext}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       end
 
       # TODO: Fix code for items 17 and 18 so that the quotes more
@@ -170,6 +169,53 @@ class Generator
 
   def get_other(item)
     item = "\"#{item}\""
+  end
+
+  def get_tech(item)
+#    format = "- project:\n  name: \\1\n  description:
+    matches = item.match /\[([\w\d ]*)\]/
+    if matches
+      name = matches.captures[0]
+      description = matches.captures[1]
+
+      item = "- project:\n  name: \"#{name}\"\n  description: \"#{description}\""
+      item << "\n  notes:\n    - "
+      print item
+    end
+
+    item
+  end
+
+  def get_edu(item)
+    matches = item.match /\[([\w\d ]*)\]/
+    if matches
+      name = matches.captures[0]
+      date = matches.captures[1]
+
+      item = "- school:\n  name: \"#{name}\"\n  date: \"#{date}\""
+      item << "\n  notes:\n    - "
+      print item
+    end
+
+    item
+  end
+
+  def get_job(item)
+    matches = item.match /\[([\w\d ]*)\]/
+    if matches
+      company = matches.captures[0]
+      location = matches.captures[1]
+      position = matches.captures[2]
+      dates = matches.captures[3]
+
+      item = "- job:\n  company: \"#{company}\""
+      item << "\n  location: \"#{location}\""
+      item << "\n  position: \"#{position}\"\n  dates: \"#{dates}\""
+      item << "\n  duties:\n    - "
+      print item
+    end
+
+    item
   end
 
   def add_item_to_text(item, student_id = false)
@@ -246,10 +292,25 @@ class Generator
             item = get_interests(item)
           when 18
             item = get_bio(item)
-          when 21
+          when 33
             item = get_other(item)
           else
-            item = "\"#{item}\""
+
+            if (@type != "markdown_r")
+              item = "\"#{item}\""
+            else # is resume
+
+              case @count
+              when 19, 20, 21, 22
+                item = get_tech(item)
+              when 23, 24, 25, 26
+                item = get_edu(item)
+              when 27, 28, 29, 30
+                item = get_job(item)
+              end
+
+            end
+
           end
         end
 

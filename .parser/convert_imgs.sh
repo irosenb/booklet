@@ -16,6 +16,7 @@ then
 	    other=".${other}"
 	    otherjpg="${other}.jpg"
 	    otherpng="${other}.png"
+
 	    convert $otherpng $otherjpg
 	fi
 
