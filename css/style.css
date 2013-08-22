@@ -93,7 +93,7 @@ hr {
 	float: left;
 }
 
-.bold, .char9, .char10, .char11, .char12 {
+.hashtag .char9, .hashtag .char10, .hashtag .char11, .hashtag .char12 {
 	font-weight: bold;
 	text-transform: uppercase;
 }

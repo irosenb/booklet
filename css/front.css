@@ -97,6 +97,7 @@ body {
 .semester {
     font-size: 22px;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .student .id {
