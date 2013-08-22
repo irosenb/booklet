@@ -19,9 +19,9 @@ Rows = [ "nil",
          "profile_num", "first_name", "last_name", "phone", "email", "resume",
          "linkedin", "blog", "twitter", "github", "stackoverflow", 
          "coderwall", "hackernews", "teamtreehouse", "codeschool",
-         "picture", "interests", "bio", "tech_1", "tech_2", "tech_3",
-         "tech_4", "edu_1", "edu_2", "edu_3", "edu_4", "job_1", "job_2",
-         "job_3", "job_4", "looking", "live", "other" ]
+         "picture", "interests", "bio", "technical_experience:\n- project", "- project", "- project",
+         "- project", "- school", "education:\n- school", "- school", "- school", "employment_history:\n- job",
+         "- job", "- job", "- job", "looking", "live", "other" ]
 
 def download(url, n, first, last, dir)
 

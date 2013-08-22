@@ -172,47 +172,51 @@ class Generator
   end
 
   def get_tech(item)
-#    format = "- project:\n  name: \\1\n  description:
-    matches = item.match /\[([\w\d ]*)\]/
+    matches = item.match /\[([\w\d -.,!?']*)\]/
     if matches
       name = matches.captures[0]
       description = matches.captures[1]
-
-      item = "- project:\n  name: \"#{name}\"\n  description: \"#{description}\""
+      item = "\n  name: \"#{name}\"\n  description: \"#{description}\""
       item << "\n  notes:\n    - "
-      print item
+#      print item
+    else
+      item = ""
     end
-
+    
     item
   end
 
   def get_edu(item)
-    matches = item.match /\[([\w\d ]*)\]/
+    matches = item.match /\[([\w\d -.,!?']*)\]/
     if matches
       name = matches.captures[0]
       date = matches.captures[1]
 
-      item = "- school:\n  name: \"#{name}\"\n  date: \"#{date}\""
+      item = "\n  name: \"#{name}\"\n  date: \"#{date}\""
       item << "\n  notes:\n    - "
-      print item
+#      print item
+    else
+      item = ""
     end
 
     item
   end
 
   def get_job(item)
-    matches = item.match /\[([\w\d ]*)\]/
+    matches = item.match /\[([\w\d -.,!?']*)\]/
     if matches
       company = matches.captures[0]
       location = matches.captures[1]
       position = matches.captures[2]
       dates = matches.captures[3]
 
-      item = "- job:\n  company: \"#{company}\""
+      item = "\n  company: \"#{company}\""
       item << "\n  location: \"#{location}\""
       item << "\n  position: \"#{position}\"\n  dates: \"#{dates}\""
       item << "\n  duties:\n    - "
-      print item
+#      print item
+    else
+      item = ""
     end
 
     item
@@ -301,10 +305,22 @@ class Generator
             else # is resume
 
               case @count
+
+              # when 19
+              #   item = "technical_experience:\n"
+              #   item << get_tech(item)
               when 19, 20, 21, 22
                 item = get_tech(item)
+
+              # when 23
+              #   item = "education:\n"
+              #   item << get_edu(item)
               when 23, 24, 25, 26
                 item = get_edu(item)
+
+              # when 27
+              #   item = "employment_history:\n"
+              #   item << get_job(item)
               when 27, 28, 29, 30
                 item = get_job(item)
               end
