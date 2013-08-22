@@ -15,5 +15,5 @@ done < "pdf_page_names.txt"
 
 files="${files}http://0.0.0.0:4000/blank.html"
 
-wkhtmltopdf --ignore-load-errors --disable-pdf-compression -B 0 -T 0 -R 0 -L 0 $files booklet.pdf
+wkhtmltopdf --ignore-load-errors --disable-pdf-compression --disable-smart-shrinking -B 0 -T 0 -R 0 -L 0 $files booklet.pdf
 # Other useful options, like for bolding and styling?

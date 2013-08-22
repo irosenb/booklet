@@ -2,6 +2,7 @@
 # Execute all other files and print results prettily.
 
 require 'rubygems'
+require 'bundler/setup'
 require 'date'
 require 'net/http'
 require 'open-uri'
