@@ -63,19 +63,33 @@ def parser
     option = ARGV[0]
     # Later, move this to bash script? And put it ahead of other processes?
     case option
+    when "api"
+
+      if ARGV.length != 2
+        set_api_key(ARGV[1])
+      else
+        print("\nPlease input an API key.\n")
+      end
+
     when "profile_pages"
       profile_page = Generator.new("markdown_p")
+
     when "resume_pages"
       resume_page = Generator.new("markdown_r")
+
     when "markdown_pages"
       profile_page = Generator.new("markdown_p")
       resume_page = Generator.new("markdown_r")
+
     when "text_files"
       txt = Generator.new("txt")
+
     when "images"
       img = Generator.new("img")
+
     when "resume_files"
       resume_file = Generator.new("resume")
+
     when "generate"
       profile_page = Generator.new("markdown_p")
       resume_page = Generator.new("markdown_r")
@@ -87,6 +101,7 @@ def parser
 
       `./make_pdf.sh`
       print "\nFinished regenerating images.\n"
+
     else
       print "Could not parse #{ARGV[0]}: "
       print "Invalid command line option given to parse script.\n"
@@ -97,6 +112,17 @@ def parser
 
 end
 
+if ARGV.length > 0
+  if ARGV[1] == "api"
+    set_api_key(ARGV[1])
+  end
+  # Or run `ruby set_api.rb ARGV[n]`
+end
 
-scraper
-parser
+if (File.exist?("api_key.txt"))
+  scraper
+  parser
+else
+  print "\nMust create an API key first by running `./parse.sh api [key]`.\n"
+  return 0
+end

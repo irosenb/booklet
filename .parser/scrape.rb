@@ -5,15 +5,34 @@
 require 'wuparty'
 require 'fileutils'
 
+def get_api_key
+  key = ""
+
+  File.open("api_key.txt", "r").each_line do |line|
+    key = line
+  end
+
+  key
+end
+
 ACCOUNT = 'flatironschool'
-API_KEY = '2UDV-LOZ7-2TY9-SH7J'
 FORM_ID = 'ruby-002-student-profile-survey'
 
 def scraper
 
   names = []
 
-  wufoo = WuParty.new(ACCOUNT, API_KEY)
+  api_key = get_api_key
+
+  if api_key == ""
+    print "\nNo API key set. Please run `./parse.sh api [key]`.\n"
+    return 0
+  elsif api_key.length != 19
+    print "\nAPI key is invalid.\n"
+    return 0
+  end
+
+  wufoo = WuParty.new(ACCOUNT, api_key)
   form = wufoo.form(FORM_ID)
 
   FileUtils.mv('bak/sps.txt', 'bak/sps.txt.bak')
