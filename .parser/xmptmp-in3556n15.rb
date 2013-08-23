@@ -377,12 +377,13 @@ class Generator
 
         end
 
-        if @txt =~ /[\w]+: \"\"/
-          @txt.gsub!(/[\w]+: \"\"/, "")
-          @txt.gsub!(/- [\w]+:[ ][\n ]{4,}[\w]+:/, "") # ?? {4,} not clean?
+        for line in @txt
+          
+          end
         end
 
         student << @txt
+
         student.close
 
         print "Finished #{human_readable(@type)} for "
