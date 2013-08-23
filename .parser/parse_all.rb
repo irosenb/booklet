@@ -178,7 +178,16 @@ class Generator
       description = matches.captures[1]
       item = "\n  name: \"#{name}\"\n  description: \"#{description}\""
       item << "\n  notes:\n    - "
-#      print item
+      len = matches.length
+      puts "---------------------"
+      puts(len)
+      puts "---------------------"
+      if len > 2
+        for match in (matches.captures[2]...matches.captures[len])
+          print(match)
+        end
+      end
+
     else
       item = ""
     end
@@ -194,6 +203,15 @@ class Generator
 
       item = "\n  name: \"#{name}\"\n  date: \"#{date}\""
       item << "\n  notes:\n    - "
+      len = matches.length
+      puts "---------------------"
+      puts(len)
+      puts "---------------------"
+      if len > 2
+        for match in (matches.captures[2]...matches.captures[len])
+          print(match)
+        end
+      end
 #      print item
     else
       item = ""
@@ -203,9 +221,11 @@ class Generator
   end
 
   def get_job(item)
-    matches = item.match /\[([\w\d -.,!?']*)\]/
+#    print item
+    matches = item.scan(/\[([\w\d -.,!?']*)\]/)
+    print matches
     if matches
-      company = matches.captures[0]
+      company = matches.captures[0][0]
       location = matches.captures[1]
       position = matches.captures[2]
       dates = matches.captures[3]
@@ -214,6 +234,15 @@ class Generator
       item << "\n  location: \"#{location}\""
       item << "\n  position: \"#{position}\"\n  dates: \"#{dates}\""
       item << "\n  duties:\n    - "
+      len = matches.size
+      puts "---------------------"
+      puts(len)
+      puts "---------------------"
+      if len > 4
+        for match in (matches.captures[4]...matches.captures[len])
+          print(match)
+        end
+      end
 #      print item
     else
       item = ""

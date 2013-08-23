@@ -88,9 +88,13 @@ hr {
 }
 
 .field {
-	
 	padding-right: 0.5em;
 	float: left;
+}
+
+.bold {
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .hashtag .char9, .hashtag .char10, .hashtag .char11, .hashtag .char12 {
@@ -102,6 +106,11 @@ hr {
     text-transform: uppercase;
     margin-right: 0px;
 }
+
+.heading {
+	text-transform: uppercase;
+}
+
 
 /* .profile, .resume a { */
 /* 	font-size: 0; */
