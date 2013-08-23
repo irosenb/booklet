@@ -51,11 +51,13 @@
 			<div class="field bold left">Twitter</div>
 			<div class="right twitter uline">{{ page.twitter }} </div>
 			<div class="field bold left">Meetup Presentation</div>
-			{% for item in page.presentation %}
-			<div class="left presentation">{{ item }} </div> <!-- presentations? -->
-			{% endfor %}
+			<!-- {% for item in page.meetup_pres %} -->
+			<div class="left presentation">{{ page.meetup_pres }} </div>
+			<!-- {% endfor %} -->
 			<div class="field bold left">Blog</div> 
-			<div class="right uline">{{ page.blog }} </div> 	<!-- Blog posts? -->
+			<div class="right uline">{{ page.blog }} </div>
+			<div class="left"> {{ page.blog_post_1}} </div>
+			<div class="left"> {{ page.blog_post_2}} </div>
 			<!-- The following is for posts. -->
 			<!-- {% for post in page.blog %} -->
 			<!-- <div class="left"> {{ post }} </div> -->

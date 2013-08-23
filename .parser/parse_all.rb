@@ -241,6 +241,26 @@ class Generator
     item
   end
 
+  def get_meetup_pres(item)
+    item
+  end
+
+  def get_blog_post(item)
+    matches = item.scan(/\[([\w\d -.,!?']*)\]/).flatten
+    if matches
+      name = matches[0]
+      url = matches[1]
+
+      item = "\n  name: \"#{name}\""
+      item << "\n  url: \"#{url}\""
+
+    else
+      item = ""
+    end
+
+    item
+  end
+
   def add_item_to_text(item, student_id = false)
     if !(student_id)
       @txt << "#{Rows[@count]}: #{item}\n"
@@ -320,18 +340,27 @@ class Generator
           else
 
             if (@type != "markdown_r")
-              item = "\"#{item}\""
+
+              case @count
+              when 19
+                item = get_meetup_pres(item)
+              when 20, 21
+                item = get_blog_post(item)
+              else
+                item = "\"#{item}\""
+              end
+
             else
 
               case @count
 
-              when 19, 20, 21, 22
+              when 22, 23, 24, 25
                 item = get_tech(item)
 
-              when 23, 24, 25, 26
+              when 26, 27, 28, 29
                 item = get_edu(item)
 
-              when 27, 28, 29, 30
+              when 30, 31, 32, 33
                 item = get_job(item)
               end
 

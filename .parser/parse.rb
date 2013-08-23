@@ -19,10 +19,12 @@ Rows = [ "nil",
          "profile_num", "first_name", "last_name", "phone", "email", "resume",
          "linkedin", "blog", "twitter", "github", "stackoverflow", 
          "coderwall", "hackernews", "teamtreehouse", "codeschool",
-         "picture", "interests", "bio", "technical_experience:\n- project",
-         "- project", "- project", "- project", "education:\n- school",
-         "- school", "- school", "- school", "employment_history:\n- job",
-         "- job", "- job", "- job", "looking", "live", "other" ]
+         "picture", "interests", "bio", "meetup_pres", "blog_post_1",
+         "blog_post_2",
+         "technical_experience:\n- project", "- project", "- project",
+         "- project", "education:\n- school", "- school", "- school",
+         "- school", "employment_history:\n- job", "- job", "- job",
+         "- job", "looking", "live", "other" ]
 
 def download(url, n, first, last, dir)
 
