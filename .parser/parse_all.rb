@@ -172,19 +172,16 @@ class Generator
   end
 
   def get_tech(item)
-    matches = item.match /\[([\w\d -.,!?']*)\]/
+    matches = item.scan(/\[([\w\d -.,!?']*)\]/).flatten
     if matches
-      name = matches.captures[0]
-      description = matches.captures[1]
+      name = matches[0]
+      description = matches[1]
       item = "\n  name: \"#{name}\"\n  description: \"#{description}\""
-      item << "\n  notes:\n    - "
+      item << "\n  notes:"
       len = matches.length
-      puts "---------------------"
-      puts(len)
-      puts "---------------------"
       if len > 2
-        for match in (matches.captures[2]...matches.captures[len])
-          print(match)
+        for match in (2...len)
+          item << "\n    - #{matches[match]}"
         end
       end
 
@@ -196,23 +193,20 @@ class Generator
   end
 
   def get_edu(item)
-    matches = item.match /\[([\w\d -.,!?']*)\]/
+    matches = item.scan(/\[([\w\d -.,!?']*)\]/).flatten
     if matches
-      name = matches.captures[0]
-      date = matches.captures[1]
+      name = matches[0]
+      date = matches[1]
 
       item = "\n  name: \"#{name}\"\n  date: \"#{date}\""
-      item << "\n  notes:\n    - "
+      item << "\n  notes:"
       len = matches.length
-      puts "---------------------"
-      puts(len)
-      puts "---------------------"
       if len > 2
-        for match in (matches.captures[2]...matches.captures[len])
-          print(match)
+        for match in (2...len)
+          item << "\n    - #{matches[match]}"
         end
       end
-#      print item
+
     else
       item = ""
     end
@@ -221,29 +215,25 @@ class Generator
   end
 
   def get_job(item)
-#    print item
-    matches = item.scan(/\[([\w\d -.,!?']*)\]/)
-    print matches
+    matches = item.scan(/\[([\w\d -.,!?']*)\]/).flatten
     if matches
-      company = matches.captures[0][0]
-      location = matches.captures[1]
-      position = matches.captures[2]
-      dates = matches.captures[3]
+      company = matches[0]
+      location = matches[1]
+      position = matches[2]
+      dates = matches[3]
 
       item = "\n  company: \"#{company}\""
       item << "\n  location: \"#{location}\""
       item << "\n  position: \"#{position}\"\n  dates: \"#{dates}\""
-      item << "\n  duties:\n    - "
-      len = matches.size
-      puts "---------------------"
-      puts(len)
-      puts "---------------------"
+      item << "\n  duties:"
+
+      len = matches.length
       if len > 4
-        for match in (matches.captures[4]...matches.captures[len])
-          print(match)
+        for match in (4...len)
+          item << "\n    - #{matches[match]}"
         end
       end
-#      print item
+
     else
       item = ""
     end
