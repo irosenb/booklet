@@ -10,3 +10,4 @@ img/student/*
 _posts/*
 test.pdf
 .parser/booklet.pdf
+.parser/api_key.txt

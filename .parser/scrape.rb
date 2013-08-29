@@ -6,17 +6,39 @@ require 'wuparty'
 require 'fileutils'
 
 ACCOUNT = 'flatironschool'
-API_KEY = '2UDV-LOZ7-2TY9-SH7J'
-FORM_ID = 'ruby-002-student-profile-survey'
+
+def get_api_key
+  key = { }
+
+  count = 0
+  File.open("wufoo_info.txt", "r").each_line do |line|
+    line = line.gsub(/\n/, "")
+    key[count] = line
+    count += 1
+  end
+
+  key
+end
 
 def scraper
 
   names = []
+  wufoo_info = get_api_key
+  api_key = wufoo_info[0]
+  form_id = wufoo_info[1]
 
-  wufoo = WuParty.new(ACCOUNT, API_KEY)
-  form = wufoo.form(FORM_ID)
+  if api_key == ""
+    print "\nNo API key set. Please run `./parse.sh api [key]`.\n"
+    return 0
+  end
+  # And other error-catching for other fields and other possible errors.
+  # (check response from Wufoo before?)
+  wufoo = WuParty.new(ACCOUNT, api_key)
+  form = wufoo.form(form_id)
 
-  FileUtils.mv('bak/sps.txt', 'bak/sps.txt.bak')
+  if File.exist?('bak/sps.txt')
+    FileUtils.mv('bak/sps.txt', 'bak/sps.txt.bak')
+  end
 
   File.open("bak/sps.txt", "w") do |sps|
 
@@ -32,28 +54,16 @@ def scraper
           name << field[1]
         end
 
-        txt << ("%s\t" % (field[1].inspect)[1..-2]) if count < 22
-
+        txt << ("%s\t" % (field[1].inspect)[1..-2]) #if count < 22
+        print (field[1].inspect)[1..-2], count
+        puts
       end
 
       names << name
-
-
-      # for profile_looper in name
-      #   Page_Titles << profile_looper.to_s
-      # end
-      # Page_Titles << "_profile\n"
-      # for resume_looper in name
-      #   Page_Titles << resume_looper.to_s
-      # end
-      # Page_Titles << "_resume\n"
-
-
       txt << "\n"
       sps.write(txt)
-
+#      print txt
     end
-
     names = names.uniq
     names.sort!
 

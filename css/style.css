@@ -156,9 +156,14 @@ hr {
 
 .presentation {
 	/*float: right; */
-	position: absolute;
-	padding-bottom: 10px;
+	/*position: absolute;*/
+	padding-bottom: 1px;
 	display: block;
+}
+
+.blog_post {
+    /*display: block;*/
+    
 }
 
 .person {
@@ -296,6 +301,10 @@ div.right {
 
 .presentation:before  {
 	content: "+";
+}
+
+.blog_post:before {
+    content: "+";
 }
 
 .visible-print  { display: inherit !important; }
